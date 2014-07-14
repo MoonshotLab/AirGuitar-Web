@@ -18,11 +18,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.allAwesome);
 app.get('/awesomes', routes.allAwesome);
-app.get('/awesome/:id', routes.findAwesome);
+app.get('/awesome/:shortCode', routes.findAwesome);
 app.post('/awesome', routes.makeAwesome);
 
 server.listen(port, function(){
-  console.log('listening on *:3000');
+  console.log('server started, listening on port ' + port + '...');
 });
 
 sockets.connect(server);

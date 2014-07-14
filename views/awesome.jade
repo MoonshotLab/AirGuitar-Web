@@ -1,4 +1,7 @@
+include _awesome
 extends layout
 
 block content
-  h1 Awesome
+  h1 One Awesome
+  - if(awesome)
+    +awesome(awesome)

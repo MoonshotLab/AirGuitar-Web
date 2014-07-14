@@ -1,0 +1,10 @@
+mixin awesome(awesome)
+  h2
+    span.key Short Code:
+    span.val= awesome.shortCode
+
+  - each column in awesome.columns
+    ul
+      - each item in column
+        li
+          img(width="150px;" src="#{awesome.rootUrl}/#{item}")
