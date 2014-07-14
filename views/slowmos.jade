@@ -1,0 +1,7 @@
+include _slowmo
+extends layout
+
+block content
+  h1 Slowmos
+    each slowmo in slowmos
+      +slowmo(slowmo)

@@ -8,6 +8,6 @@ Includes the following:
 * Share stuff...
 
 
-Environment Variables:
+## Environment Variables
 * `DB_CONNECT` - The Full mongo connection string: `mongodb://{mongo_username}:{mongo_password}@{mongo_url}`
 * `POST_HOOK_SECRET` - The secret used to make POST request to the companion web app.

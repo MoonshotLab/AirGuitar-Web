@@ -16,10 +16,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.allAwesome);
-app.get('/awesomes', routes.allAwesome);
+app.get('/', routes.allAwesomes);
+app.get('/awesomes', routes.allAwesomes);
 app.get('/awesome/:shortCode', routes.findAwesome);
 app.post('/awesome', routes.makeAwesome);
+app.get('/slowmos', routes.allSlowmos);
+app.get('/slowmo/:shortCode', routes.findSlowmo);
+app.post('/slowmo', routes.makeSlowmo);
 
 server.listen(port, function(){
   console.log('server started, listening on port ' + port + '...');
