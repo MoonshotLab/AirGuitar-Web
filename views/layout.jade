@@ -5,10 +5,13 @@ html
     script(src='/socket.io/socket.io.js')
     script(src='/vendor/underscore.js')
     script(src='/vendor/jquery.js')
-    script(src='/app.js')
+    script.
+      var socket = io();
+      var templates = {};
+      var content = {};
     script(src='/templates.js')
-
     block head
+    script(src='/app.js')
 
   body
     block content
