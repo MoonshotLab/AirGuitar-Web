@@ -1,7 +1,11 @@
-include _awesome
 extends layout
+
+block head
+  title Awesomes
+  script(src='/awesome.js')
+  script.
+    content.awesomes = !{JSON.stringify(awesomes)}
 
 block content
   h1 Awesomes
-    each awesome in awesomes
-      +awesome(awesome)
+  #content

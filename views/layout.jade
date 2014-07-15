@@ -1,10 +1,14 @@
 doctype html
 html
   head
-    title= title
     link(rel='stylesheet', href='/app.css')
     script(src='/socket.io/socket.io.js')
+    script(src='/vendor/underscore.js')
+    script(src='/vendor/jquery.js')
     script(src='/app.js')
+    script(src='/templates.js')
+
+    block head
 
   body
     block content

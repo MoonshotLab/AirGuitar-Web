@@ -1,7 +1,11 @@
-include _slowmo
 extends layout
+
+block head
+  title One Slowmo
+  script(src='/slowmo.js')
+  script.
+    content.slowmos = [!{JSON.stringify(slowmo)}]
 
 block content
   h1 One Slowmo
-  - if(slowmo)
-    +slowmo(slowmo)
+  #content
