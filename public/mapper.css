@@ -14,13 +14,16 @@ html, body{
 }
 
 .block{
+  z-index: 2;
+  position: relative;
   width: 50%;
   height: 50%;
   display: inline-block;
   overflow: hidden;
+  -webkit-perspective: 100px;
 }
 
-#block-0{
+/*#block-0{
   background-color: green;
 }
 #block-1{
@@ -31,17 +34,69 @@ html, body{
 }
 #block-3{
   background-color: yellow;
-}
+}*/
 
 .unit{
+  z-index: 2;
+  position: absolute;
   display: inline-block;
-  width: 50%;
-  height: 50%;
+  width: 99%;
+  height: 99%;
+  -webkit-transform: rotateZ(45deg);
+}
+
+.unit-0{
+  background-color: rgba(20, 20, 80, 1);
 }
 
 .unit-1{
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(40, 40, 80, 1);
+}
+
+.unit-2{
+  background-color: rgba(20, 20, 80, 1);
+}
+
+.unit-3{
+  background-color: rgba(40, 40, 80, 1);
+}
+
+.unit-0{
+  top: -70%;
+  left: 0;
+}
+.unit-1{
+  top: 0;
+  left: 70%;
 }
 .unit-2{
-  background-color: rgba(0,0,0,.2);
+  left: 0;
+  top: 70%;
+}
+.unit-3{
+  left: -70%;
+  top: 0%;
+}
+
+.unit.hide{
+  opacity: 0;
+}
+
+#video-master{
+
+}
+
+video{
+  position: absolute;
+  width: 100%;
+  margin-left: -50%;
+  width: 200%;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
 }

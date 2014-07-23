@@ -3,14 +3,19 @@ extends layout
 block head
   title Projection Mapper
   link(rel='stylesheet', href='mapper.css')
+  script(src='mapper.js')
 
 block content
   - var blocksInMap = 4;
   - var unitsInBlock = 4;
   #map
+    video(id='video-master', autoplay="true", loop="true")
+      source(src="")
     - for(var i=0; i<blocksInMap; i++){
       .block(id="block-#{i}")
         - for(var j=0; j<unitsInBlock; j++){
           .unit(id="unit-#{i}-#{j}", class="unit-#{j}")
         - }
+        video(id="video-#{i}", autoplay="true", loop="true")
+          source(src="")
     - }
