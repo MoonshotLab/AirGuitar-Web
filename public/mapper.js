@@ -1,58 +1,75 @@
-var toggleUnits = function($units, next){
+var toggleUnits = function($units){
+  var deferred = Q.defer();
   var time = 200;
   var $shuffled = shuffle($units);
 
   $shuffled.each(function(i, unit){
     setTimeout(function(){
       $(unit).toggleClass('hide');
-      if(i == $shuffled.length-1 && next){
-        setTimeout(next, (i+1*time));
+      if(i == $shuffled.length-1){
+        setTimeout(deferred.resolve, (i+1*time));
       }
     }, i*time);
   });
+
+  return deferred.promise;
 };
 
 
-var showFullScreenVideo = function(videoURL, next){
+var showFullScreenVideo = function(videoURL){
+  var deferred = Q.defer();
+
   $('#video-master')[0].setAttribute('src', videoURL);
   $('#video-master')[0].playbackRate = '.1';
   $('#video-master').removeClass('hide');
 
-  toggleUnits($('.unit'), function(){
-    if(next) next();
-  });
+  toggleUnits($('.unit'), deferred.resolve);
+
+  return deferred.promise;
 };
 
 
-var hideAll = function(next){
-  toggleUnits($('.unit'), function(){
+var hideAll = function(){
+  var deferred = Q.defer();
+
+  toggleUnits($('.unit')).then(function(){
     $.each($('video'), function(i, video){
       video.setAttribute('src', '');
     });
+
     $('#video-master').addClass('hide');
-    if(next) next();
+    deferred.resolve();
   });
+
+  return deferred.promise;
 };
 
 
-var showBlockVideo = function(videoURL, blockIndex, next){
+var showBlockVideo = function(videoURL, blockIndex){
+  var deferred = Q.defer();
   var $block = $('#block-' + blockIndex);
+
   $block.find('video').removeClass('hide');
   $block.find('video')[0].setAttribute('src', videoURL);
   $block.find('video')[0].playbackRate = '.1';
-  toggleUnits($block.find('.unit'), function(){
-    if(next) next();
-  });
+
+  toggleUnits($block.find('.unit'))
+    .then(deferred.resolve);
+
+  return deferred.promise;
 };
 
 
-var hideBlockVideo = function(blockIndex, next){
+var hideBlockVideo = function(blockIndex){
+  var deferred = Q.defer();
   var $block = $('#block-' + blockIndex);
 
-  toggleUnits($block.find('.unit'), function(){
-    if(next) next();
+  toggleUnits($block.find('.unit')).then(function(){
     $block.find('video').addClass('hide');
+    deferred.resolve();
   });
+
+  return deferred.promise;
 };
 
 
