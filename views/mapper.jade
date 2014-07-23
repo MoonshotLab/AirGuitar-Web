@@ -2,7 +2,15 @@ extends layout
 
 block head
   title Projection Mapper
-
+  link(rel='stylesheet', href='mapper.css')
 
 block content
-  h1 Projection Mapper
+  - var blocksInMap = 4;
+  - var unitsInBlock = 4;
+  #map
+    - for(var i=0; i<blocksInMap; i++){
+      .block(id="block-#{i}")
+        - for(var j=0; j<unitsInBlock; j++){
+          .unit(id="unit-#{i}-#{j}", class="unit-#{j}")
+        - }
+    - }
