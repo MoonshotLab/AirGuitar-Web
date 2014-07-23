@@ -1,14 +1,8 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='/mapper.css')
-    script(src='/socket.io/socket.io.js')
-    script(src='/vendor/underscore.js')
-    script(src='/vendor/jquery.js')
-    script.
-      var socket = io();
-      var templates = {};
-      var content = {};
+extends layout
 
-  body
-    h1 Mapper
+block head
+  title Projection Mapper
+
+
+block content
+  h1 Projection Mapper
