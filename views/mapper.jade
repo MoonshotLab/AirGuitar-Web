@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    link(rel='stylesheet', href='/mapper.css')
+    script(src='/socket.io/socket.io.js')
+    script(src='/vendor/underscore.js')
+    script(src='/vendor/jquery.js')
+    script.
+      var socket = io();
+      var templates = {};
+      var content = {};
+
+  body
+    h1 Mapper

@@ -17,10 +17,11 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', routes.allAwesomes);
+app.get('/mapper', routes.mapper);
 app.get('/awesomes', routes.allAwesomes);
 app.get('/awesome/:shortCode', routes.findAwesome);
 app.post('/awesome', routes.makeAwesome);
-app.get('/slowmos', routes.allSlowmos);
+app.get('/slowmos', routes.slowmos);
 app.get('/slowmo/:shortCode', routes.findSlowmo);
 app.post('/slowmo', routes.makeSlowmo);
 
