@@ -4,11 +4,13 @@ block head
   title Projection Mapper
   link(rel='stylesheet', href='mapper.css')
   script(src='mapper.js')
+  script(src='thing.js')
 
 block content
   - var blocksInMap = 4;
   - var unitsInBlock = 4;
   #map
+    img#map-surface(src='/surface.jpg')
     video(id='video-master', autoplay="true", loop="true")
       source(src="")
     - for(var i=0; i<blocksInMap; i++){
@@ -16,6 +18,12 @@ block content
         - for(var j=0; j<unitsInBlock; j++){
           .unit(id="unit-#{i}-#{j}", class="unit-#{j}")
         - }
-        video(id="video-#{i}", autoplay="true", loop="true")
-          source(src="")
+        - if(i == 3) {
+          video(id="video-#{i}", autoplay="true", loop="true")
+            source(src="https://s3.amazonaws.com/air-guitar/00014.mp4")
+        - }
+        - else {
+          video(id="video-#{i}", autoplay="true", loop="true")
+            source(src="")
+        - }
     - }
