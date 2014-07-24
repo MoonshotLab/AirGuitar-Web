@@ -13,7 +13,10 @@ var port = process.env.PORT || 3000;
 
 if(env != 'production'){
   livereload = require('express-livereload');
-  livereload(app, {watchDir : process.cwd() + '/public'});
+  livereload(app, {
+    watchDir : process.cwd() + '/public',
+    exts: 'svg'
+  });
 }
 
 app.set('views', path.join(__dirname, 'views'));
