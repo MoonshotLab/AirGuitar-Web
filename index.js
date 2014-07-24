@@ -4,10 +4,17 @@ var http = require('http');
 var bodyParser = require('body-parser');
 var routes = require('./lib/routes');
 var sockets = require('./lib/sockets');
+var env = process.env.MODE;
+var livereload = null;
 
 var app = express();
 var server = http.Server(app);
 var port = process.env.PORT || 3000;
+
+if(env != 'production'){
+  livereload = require('express-livereload');
+  livereload(app, {watchDir : process.cwd() + '/public'});
+}
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

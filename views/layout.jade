@@ -14,5 +14,9 @@ html
     block head
     script(src='/app.js')
 
+    - try{
+      != LRScript
+    - } catch(e){}
+
   body
     block content
