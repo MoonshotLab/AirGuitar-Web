@@ -52,12 +52,20 @@ for blockId in (0..3)
     #unit-{blockId}-{unitNum}
       -webkit-mask-image url('/masks/' + blockId + '-' + unitNum + '.svg')
 
+.unit-0
+  top -.5%
 
 .unit-1
   -webkit-mask-position bottom right
+  left .5%
 
 .unit-2
+  top .5%
   -webkit-mask-position bottom
+
+.unit-3
+  left -.5%
+
 
 .unit-0, .unit-2
   width 102%

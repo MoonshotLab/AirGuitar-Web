@@ -90,11 +90,19 @@ body {
 #unit-3-3 {
   -webkit-mask-image: url("/masks/3-3.svg");
 }
+.unit-0 {
+  top: -0.5%;
+}
 .unit-1 {
   -webkit-mask-position: bottom right;
+  left: 0.5%;
 }
 .unit-2 {
+  top: 0.5%;
   -webkit-mask-position: bottom;
+}
+.unit-3 {
+  left: -0.5%;
 }
 .unit-0,
 .unit-2 {
