@@ -11,12 +11,6 @@
   background-color yellow
 
 
-
-for blockId in (0..3)
-  for unitNum in (0..3)
-    #unit-{blockId}-{unitNum}
-      -webkit-mask-image url('/masks/' + blockId + '-' + unitNum + '.svg')
-
 .unit-0
   top -.5%
 
@@ -39,3 +33,9 @@ for blockId in (0..3)
 .unit-1, .unit-3
   height 102%
   margin-top -1%
+
+
+for blockId in (0..24)
+  for unitNum in (0..3)
+    #unit-{blockId}-{unitNum}
+      -webkit-mask-image url('/masks/' + blockId%3 + '-' + unitNum + '.svg')
