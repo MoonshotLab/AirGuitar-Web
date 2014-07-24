@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    link(rel='stylesheet', href='/app.css')
+    link(rel='stylesheet', href='/css/slowmo.css')
     script(src='/socket.io/socket.io.js')
     script(src='/vendor/underscore.js')
     script(src='/vendor/zepto.js')
@@ -10,9 +10,9 @@ html
       var socket = io();
       var templates = {};
       var content = {};
-    script(src='/templates.js')
+    script(src='/js/templates.js')
     block head
-    script(src='/app.js')
+    script(src='/js/slowmo.js')
 
     - try{
       != LRScript

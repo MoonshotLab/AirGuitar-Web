@@ -19,7 +19,7 @@ $(function(){
           Math.floor(Math.random() * 255) + 1,
         ')'
       ].join('');
-      console.log($(unit));
+
       $(unit).css('backgroundColor', color);
     });
   }

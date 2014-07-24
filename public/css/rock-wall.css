@@ -4,14 +4,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #000;
   overflow: hidden;
-}
-#map-surface {
-  width: 840px;
-  position: absolute;
-  z-index: 4;
-  opacity: 0.5;
-  display: none;
 }
 #map {
   overflow: hidden;
@@ -29,6 +23,17 @@ body {
   display: block;
   float: left;
   overflow: hidden;
+}
+video {
+  position: absolute;
+  margin-left: -50%;
+  width: 200%;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }
 .unit {
   z-index: 2;
@@ -113,15 +118,4 @@ body {
 .unit-3 {
   height: 102%;
   margin-top: -1%;
-}
-video {
-  position: absolute;
-  margin-left: -50%;
-  width: 200%;
-}
-.show {
-  display: block;
-}
-.hide {
-  display: none;
 }

@@ -24,8 +24,8 @@ app.use(bodyParser.json());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.mapper);
-app.get('/mapper', routes.mapper);
+app.get('/', routes.rockWall);
+app.get('/rock-wall', routes.rockWall);
 app.get('/slowmos', routes.slowmos);
 app.get('/slowmo/:shortCode', routes.findSlowmo);
 app.post('/slowmo', routes.makeSlowmo);
