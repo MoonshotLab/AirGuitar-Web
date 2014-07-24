@@ -15,17 +15,6 @@ body {
   margin: auto;
   position: relative;
 }
-video {
-  position: absolute;
-  margin-left: -50%;
-  width: 200%;
-}
-.show {
-  display: block;
-}
-.hide {
-  display: none;
-}
 .block {
   z-index: 2;
   position: relative;
@@ -370,4 +359,15 @@ video {
 }
 #unit-24-3 {
   -webkit-mask-image: url("/masks/0-3.svg");
+}
+video {
+  position: absolute;
+  margin-left: -50%;
+  width: 200%;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
 }

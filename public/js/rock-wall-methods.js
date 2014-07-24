@@ -1,14 +1,20 @@
-var toggleUnits = function($units){
+// time: milliseconds it takes to init the transition
+// effect: the css class to apply or unapply
+// $units: an array of $.ified unites
+
+var toggleUnits = function(opts){
   var deferred = Q.defer();
-  var time = 200;
-  var $shuffled = shuffle($units);
+  var time = opts.time || 100;
+  var effect = opts.effect || 'hide';
+  var $shuffled = shuffle(opts.$units);
 
   $shuffled.each(function(i, unit){
     setTimeout(function(){
-      $(unit).toggleClass('hide');
-      if(i == $shuffled.length-1){
-        setTimeout(deferred.resolve, (i+1*time));
-      }
+      $(unit).toggleClass(effect);
+      if(i == $shuffled.length-1)
+        deferred.resolve();
+      else
+        deferred.notify(i);
     }, i*time);
   });
 
@@ -23,23 +29,10 @@ var showFullScreenVideo = function(videoURL){
   $('#video-master')[0].playbackRate = '.1';
   $('#video-master').removeClass('hide');
 
-  toggleUnits($('.unit'), deferred.resolve);
+  var allUnits = $('.unit');
 
-  return deferred.promise;
-};
-
-
-var hideAll = function(){
-  var deferred = Q.defer();
-
-  toggleUnits($('.unit')).then(function(){
-    $.each($('video'), function(i, video){
-      video.setAttribute('src', '');
-    });
-
-    $('#video-master').addClass('hide');
-    deferred.resolve();
-  });
+  toggleUnits(allUnits)
+    .then(deferred.resolve);
 
   return deferred.promise;
 };
