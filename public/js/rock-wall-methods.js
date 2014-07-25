@@ -20,7 +20,7 @@ var toggleUnits = function(opts){
   var deferred = Q.defer();
 
   var time = opts.time || 100;
-  var effect = opts.effect || 'hide';
+  var effect = opts.effect || 'hidden';
   var $shuffled = shuffle(opts.$units);
 
   if(overflowClasses.indexOf(effect) != -1)

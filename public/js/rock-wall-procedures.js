@@ -1,12 +1,3 @@
-// Transitions:
-//  x Evaporate
-//  Vertical Waterfall
-//  Horizontal Waterfall
-//  x Diagonal Waterfall
-//  x Wipe
-//  Blowout
-
-
 // All below methods take the following options:
 //   time:     time in milliseconds to complete each block transformation
 //             default: 100
@@ -22,7 +13,8 @@
 //              default: false
 var diagonalWaterfall = function(opts){
   if(!opts) opts = {};
-  var time = opts.time || 100;
+  opts.time = opts.time || 100;
+
   var columns = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [] };
   var $blocks = $('.block');
 
@@ -41,7 +33,7 @@ var diagonalWaterfall = function(opts){
       var units = $(block).find('.unit');
 
       toggleUnits({
-        time: time,
+        time: opts.time,
         effect: opts.effect,
         $units: units
       }).progress(function(progression){
@@ -58,7 +50,7 @@ var diagonalWaterfall = function(opts){
 
     setTimeout(function(){
       callBlock(blocks[times]);
-    }, index*time);
+    }, index*opts.time);
   };
 
   if(opts.reverse === true)
@@ -71,12 +63,57 @@ var diagonalWaterfall = function(opts){
 
 
 
+// A center out effect
+//   reverse: go from outside in
+//              default: false
+var blowout = function(opts){
+  if(!opts) opts = {};
+  opts.time = opts.time || 100;
+
+  var blocks = $('.block');
+  var groups = {
+    0: [ blocks[8], blocks[9], blocks[14], blocks[15] ],
+    1: [ blocks[1], blocks[2], blocks[3], blocks[4], blocks[7], blocks[10], blocks[13], blocks[16], blocks[19], blocks[20], blocks[21], blocks[22] ],
+    2: [ blocks[0], blocks[6], blocks[12], blocks[18], blocks[5], blocks[11], blocks[17], blocks[23] ]
+  };
+
+  var iterations = 0;
+  var callGroup = function(index){
+    var dones = 0;
+    var blocks = groups[index];
+    blocks.forEach(function(block){
+      var units = $(block).find('.unit');
+
+      toggleUnits({
+        time: opts.time,
+        effect: opts.effect,
+        $units: units
+      }).done(function(){
+        dones++;
+        if(dones == groups[iterations].length){
+          iterations++;
+          if(groups[iterations])
+            callGroup(iterations);
+        }
+      });
+    });
+  };
+
+  if(opts.reverse === true)
+    reverseNamedObject(groups);
+
+  callGroup(0);
+};
+
+
+
 // Defaults to create effect from left to right
 //   reverse: go from right to left
 //              default: false
 var wipe = function(opts){
   if(!opts) opts = {};
-  var time = opts.time || 100;
+  opts.time = opts.time || 100;
+
   var columns = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [] };
   var $blocks = $('.block');
 
@@ -93,7 +130,7 @@ var wipe = function(opts){
         var units = $(block).find('.unit');
 
         toggleUnits({
-          time: time,
+          time: opts.time,
           effect: opts.effect,
           $units: units
         });
@@ -111,12 +148,14 @@ var wipe = function(opts){
 
 
 
+// Randomly select each fact and apply effect
 var evaporate = function(opts){
+  if(!opts) opts = {};
   var units = $('.unit');
 
   toggleUnits({
-    time: opts.time || 10,
-    effect: opts.effect || '',
+    time: opts.time,
+    effect: opts.effect,
     $units: units
   });
 };
