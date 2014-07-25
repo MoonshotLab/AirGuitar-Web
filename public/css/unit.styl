@@ -1,38 +1,98 @@
 .unit
   z-index 2
-  position absolute
   display block
+  position absolute
+  -webkit-mask-repeat no-repeat
+  -webkit-mask-size contain
   width 100%
   height 100%
   left 0
   top 0
-  -webkit-mask-repeat no-repeat
-  -webkit-mask-size contain
-  background-color yellow
+  opacity 1
+  -webkit-transform rotateX(0) rotateY(0) scale(1)
+  &.animate
+    -webkit-transition .2s linear all
+
+  // Position each unit
+  &.unit-0
+    top -.5%
+    width 102%
+    margin-left -1%
+  &.unit-1
+    -webkit-mask-position bottom right
+    left .5%
+    height 102%
+  &.unit-2
+    top .5%
+    width 102%
+    margin-left -1%
+    -webkit-mask-position bottom
+  &.unit-3
+    left -.5%
+    height 102%
+    margin-top -1%
 
 
-.unit-0
-  top -.5%
+  // --- Animations --- //
 
-.unit-1
-  -webkit-mask-position bottom right
-  left .5%
+  // Fade
+  &.fade
+    opacity 0
 
-.unit-2
-  top .5%
-  -webkit-mask-position bottom
+  // Explode
+  &.explode
+    opacity 0
+    -webkit-transform scale(5)
 
-.unit-3
-  left -.5%
+  // Implode
+  &.implode
+    opacity 0
+    -webkit-transform scale(0)
 
+  // Move
+  &.unit-0.move
+    top -100%
+  &.unit-1.move
+    left 100%
+  &.unit-2.move
+    left -100%
+  &.unit-3.move
+    top 100%
 
-.unit-0, .unit-2
-  width 102%
-  margin-left -1%
+  // Move and Fade
+  &.unit-0.move-fade
+    top -100%
+    opacity 0
+  &.unit-1.move-fade
+    left 100%
+    opacity 0
+  &.unit-2.move-fade
+    left -100%
+    opacity 0
+  &.unit-3.move-fade
+    top 100%
+    opacity 0
 
-.unit-1, .unit-3
-  height 102%
-  margin-top -1%
+  // Perspective Shift
+  &.unit-0.perspective
+    top -100%
+    -webkit-transform rotateX(90deg)
+  &.unit-1.perspective
+    left 100%
+    -webkit-transform rotateY(90deg)
+  &.unit-2.perspective
+    top 100%
+    -webkit-transform rotateX(90deg)
+  &.unit-3.perspective
+    left -100%
+    -webkit-transform rotateY(90deg)
+
+  &.rotate-scale.unit-0, &.rotate-scale.unit-2
+    opacity 0
+    -webkit-transform rotateZ(180deg) scale(3)
+  &.rotate-scale.unit-1, &.rotate-scale.unit-3
+    opacity 0
+    -webkit-transform rotateZ(-180deg) scale(3)
 
 
 for blockId in (0..24)

@@ -7,8 +7,9 @@
 
 
 $(function(){
-  // evaporate();
-  diagonalWaterfall({ reverse: true, backwards: true});
+  setTimeout(function(){
+    // diagonalWaterfall({ effect: 'fade', time: 200 });
+  }, 1000);
 });
 
 
@@ -18,6 +19,7 @@ $(function(){
 // Reverse Backwards  x:0, y:max to x:max, y:0
 var diagonalWaterfall = function(opts){
   if(!opts) opts = {};
+  var time = opts.time || 100;
   var columns = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [] };
   var $blocks = $('.block');
 
@@ -36,8 +38,8 @@ var diagonalWaterfall = function(opts){
       var units = $(block).find('.unit');
 
       toggleUnits({
-        time: opts.speed || 50,
-        effect: 'hide',
+        time: time,
+        effect: opts.effect,
         $units: units
       }).progress(function(progression){
         if(progression == 2){
@@ -53,7 +55,7 @@ var diagonalWaterfall = function(opts){
 
     setTimeout(function(){
       callBlock(blocks[times]);
-    }, index*100);
+    }, index*time);
   };
 
   if(opts.reverse === true)
@@ -99,21 +101,5 @@ var evaporate = function(){
     time: 10,
     effect: 'hide',
     $units: units
-  }).progress(function(a){
-    console.log(a);
-  });
-};
-
-
-
-var reverseNamedObject = function(obj){
-  var arr = [];
-  for(var key in obj){
-    arr.push(obj[key]);
-  }
-
-  arr.reverse();
-  arr.forEach(function(item, i){
-    obj[i] = item;
   });
 };

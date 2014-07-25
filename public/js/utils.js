@@ -24,3 +24,16 @@ $(function(){
     });
   }
 });
+
+
+var reverseNamedObject = function(obj){
+  var arr = [];
+  for(var key in obj){
+    arr.push(obj[key]);
+  }
+
+  arr.reverse();
+  arr.forEach(function(item, i){
+    obj[i] = item;
+  });
+};
