@@ -135,7 +135,7 @@ var wipe = function(opts){
           $units: units
         });
       });
-    }, index*time);
+    }, index*opts.time);
   };
 
   if(opts.reverse === true)
