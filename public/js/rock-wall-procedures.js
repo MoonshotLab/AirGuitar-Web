@@ -3,20 +3,23 @@
 //  Vertical Waterfall
 //  Horizontal Waterfall
 //  x Diagonal Waterfall
+//  x Wipe
 //  Blowout
 
 
-$(function(){
-  setTimeout(function(){
-    // diagonalWaterfall({ effect: 'fade', time: 200 });
-  }, 1000);
-});
+// All below methods take the following options:
+//   time:     time in milliseconds to complete each block transformation
+//             default: 100
+//   effect:   the css class to be applied for the animation
+//             default: "hidden"
 
 
-// Regular            x:0, y:0 to x:max, y:max
-// Reverse            x:max, y:max to x:0, y:0
-// Backwards          x:max, y:0 to x:0, y:max
-// Reverse Backwards  x:0, y:max to x:max, y:0
+
+// Defaults to create effect from top left to bottom right.
+//   reverse:   start from the x and y max point - x:max, y:max to x:0, y:0
+//              default: false
+//   backwards: start from the x max point and y 0 point
+//              default: false
 var diagonalWaterfall = function(opts){
   if(!opts) opts = {};
   var time = opts.time || 100;
@@ -68,38 +71,52 @@ var diagonalWaterfall = function(opts){
 
 
 
-
-var horizontalPeelDown = function(){
-  var times = 0;
+// Defaults to create effect from left to right
+//   reverse: go from right to left
+//              default: false
+var wipe = function(opts){
+  if(!opts) opts = {};
+  var time = opts.time || 100;
+  var columns = { 0: [], 1: [], 2: [], 3: [], 4: [], 5: [] };
   var $blocks = $('.block');
 
-  var callBlock = function(block){
-    var units = $(block).find('.unit');
+  $blocks.forEach(function(block, i){
+    columns[i%6].push(block);
+  });
 
-    toggleUnits({
-      time: 30,
-      effect: 'hide',
-      $units: units
-    }).progress(function(progression){
-      if(progression == 2){
-        times++;
-        if($blocks[times])
-          callBlock($blocks[times]);
-      }
-    });
+  var callColumn = function(index){
+
+    setTimeout(function(){
+      var blocks = columns[index];
+
+      blocks.forEach(function(block){
+        var units = $(block).find('.unit');
+
+        toggleUnits({
+          time: time,
+          effect: opts.effect,
+          $units: units
+        });
+      });
+    }, index*time);
   };
 
-  callBlock($blocks[0]);
+  if(opts.reverse === true)
+    reverseNamedObject(columns);
+
+  for(var key in columns){
+    callColumn(key);
+  }
 };
 
 
 
-var evaporate = function(){
+var evaporate = function(opts){
   var units = $('.unit');
 
   toggleUnits({
-    time: 10,
-    effect: 'hide',
+    time: opts.time || 10,
+    effect: opts.effect || '',
     $units: units
   });
 };
