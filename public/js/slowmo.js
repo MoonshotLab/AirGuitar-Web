@@ -1,5 +1,5 @@
 var opts = {
-  videoPlaybackRate : '.2'
+  videoPlaybackRate : '.25'
 };
 
 var queryParams = location.search.replace('?', '').split('&');

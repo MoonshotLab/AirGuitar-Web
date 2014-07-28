@@ -24,3 +24,15 @@ span.val{
   font-style: italic;
   padding-left: 15px;
 }
+
+
+video{
+  -webkit-filter: brightness(2);
+  margin-left: -125px
+}
+
+.slowmo-container{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}

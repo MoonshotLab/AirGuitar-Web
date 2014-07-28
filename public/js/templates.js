@@ -3,9 +3,11 @@ templates.slowmo = _.template([
     '<span class="key">Short Code</span>',
     '<span class="val"><%= shortCode %>',
   '</h2>',
-  '<video id="slowmo-<%= shortCode %>" width="750" autoplay="true" loop="true">',
-    '<source src="<%=url%>"></source>',
-  '</video>'
+  '<div class="slowmo-container">',
+    '<video id="slowmo-<%= shortCode %>" width="750" autoplay="true" loop="true">',
+      '<source src="<%=url%>"></source>',
+    '</video>',
+  '</div>'
 ].join(''));
 
 
