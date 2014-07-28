@@ -14,8 +14,372 @@ body {
   margin: auto;
   position: relative;
 }
-.block {
+#video-configs {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+#video-configs .config {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#video-configs .mask {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 16.6%;
+  height: 16.6%;
+  overflow: hidden;
+  background-color: #008000;
+  opacity: 0.5;
+}
+#video-configs video {
+  margin-left: -50%;
+  width: 200%;
+}
+#video-configs .config.takeover .mask {
+  width: 66.4%;
+  left: 16.6%;
+  top: 0%;
+  height: 100%;
+}
+#video-configs .config.two-up .mask:nth-child(1) {
+  top: 16.6%;
+  height: 49.800000000000004%;
+  width: 49.800000000000004%;
+}
+#video-configs .config.two-up .mask:nth-child(2) {
+  left: 49.800000000000004%;
+  height: 49.800000000000004%;
+  width: 49.800000000000004%;
+}
+#video-configs .config.two-up .mask:nth-child(3) {
+  left: 0;
+}
+#video-configs .config.two-up .mask:nth-child(4) {
+  left: 16.6%;
+}
+#video-configs .config.two-up .mask:nth-child(5) {
+  left: 33.2%;
+}
+#video-configs .config.two-up .mask:nth-child(6) {
+  top: 49.800000000000004%;
+  left: 49.800000000000004%;
+}
+#video-configs .config.two-up .mask:nth-child(7) {
+  top: 49.800000000000004%;
+  left: 66.4%;
+}
+#video-configs .config.two-up .mask:nth-child(8) {
+  top: 49.800000000000004%;
+  left: 83%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(1),
+#video-configs .config.three-up-tilt .mask:nth-child(2),
+#video-configs .config.three-up-tilt .mask:nth-child(3) {
+  width: 33.2%;
+  height: 33.2%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(1) {
+  top: 16.6%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(2) {
+  top: 33.2%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(3) {
+  left: 66.4%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(4) {
+  left: 0;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(5) {
+  left: 16.6%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(6) {
+  left: 33.2%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(7) {
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(8) {
+  top: 16.6%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(9) {
+  top: 16.6%;
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(10) {
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(11) {
+  top: 49.800000000000004%;
+  left: 16.6%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(12) {
+  left: 66.4%;
+  top: 33.2%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(13) {
+  left: 83%;
+  top: 33.2%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(14) {
+  left: 66.4%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-tilt .mask:nth-child(15) {
+  left: 83%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(1),
+#video-configs .config.three-up-balance .mask:nth-child(2),
+#video-configs .config.three-up-balance .mask:nth-child(3) {
+  top: 0%;
+  width: 33.2%;
+  height: 33.2%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(2) {
+  top: 16.6%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(3) {
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(4) {
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(5) {
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(6) {
+  left: 0;
+  top: 33.2%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(7) {
+  top: 33.2%;
+  left: 16.6%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(8) {
+  top: 49.800000000000004%;
+  left: 0;
+}
+#video-configs .config.three-up-balance .mask:nth-child(9) {
+  top: 49.800000000000004%;
+  left: 16.6%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(10) {
+  top: 49.800000000000004%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(11) {
+  top: 49.800000000000004%;
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(12) {
+  top: 33.2%;
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(13) {
+  top: 33.2%;
+  left: 83%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(14) {
+  top: 49.800000000000004%;
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance .mask:nth-child(15) {
+  top: 49.800000000000004%;
+  left: 83%;
+}
+#video-configs .config.three-up .mask:nth-child(1),
+#video-configs .config.three-up .mask:nth-child(2),
+#video-configs .config.three-up .mask:nth-child(3) {
+  top: 16.6%;
+  width: 33.2%;
+  height: 33.2%;
+}
+#video-configs .config.three-up .mask:nth-child(2) {
+  left: 33.2%;
+}
+#video-configs .config.three-up .mask:nth-child(3) {
+  left: 66.4%;
+}
+#video-configs .config.three-up .mask:nth-child(4) {
+  left: 0;
+}
+#video-configs .config.three-up .mask:nth-child(5) {
+  left: 16.6%;
+}
+#video-configs .config.three-up .mask:nth-child(6) {
+  left: 33.2%;
+}
+#video-configs .config.three-up .mask:nth-child(7) {
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up .mask:nth-child(8) {
+  left: 66.4%;
+}
+#video-configs .config.three-up .mask:nth-child(9) {
+  left: 83%;
+}
+#video-configs .config.three-up .mask:nth-child(10) {
+  left: 0;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up .mask:nth-child(11) {
+  left: 16.6%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up .mask:nth-child(12) {
+  left: 33.2%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up .mask:nth-child(13) {
+  left: 49.800000000000004%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up .mask:nth-child(14) {
+  left: 66.4%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up .mask:nth-child(15) {
+  left: 83%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(1),
+#video-configs .config.three-up-balance-right .mask:nth-child(2),
+#video-configs .config.three-up-balance-right .mask:nth-child(3) {
+  width: 33.2%;
+  height: 33.2%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(1) {
+  top: 16.6%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(2) {
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(3) {
+  left: 66.4%;
+  top: 33.2%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(4) {
+  left: 0;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(5) {
+  left: 16.6%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(6) {
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(7) {
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(8) {
+  left: 33.2%;
+  top: 16.6%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(9) {
+  left: 49.800000000000004%;
+  top: 16.6%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(10) {
+  left: 33.2%;
+  top: 33.2%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(11) {
+  left: 49.800000000000004%;
+  top: 33.2%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(12) {
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(13) {
+  left: 16.6%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(14) {
+  left: 33.2%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-right .mask:nth-child(15) {
+  left: 49.800000000000004%;
+  top: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-left {
+  display: block;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(1),
+#video-configs .config.three-up-balance-left .mask:nth-child(2),
+#video-configs .config.three-up-balance-left .mask:nth-child(3) {
+  width: 33.2%;
+  height: 33.2%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(1) {
+  left: 0;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(2) {
+  top: 33.2%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(3) {
+  top: 16.6%;
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(4) {
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(5) {
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(6) {
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(7) {
+  left: 83%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(8) {
+  top: 16.6%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(9) {
+  top: 16.6%;
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(10) {
+  top: 33.2%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(11) {
+  top: 33.2%;
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(12) {
+  top: 49.800000000000004%;
+  left: 33.2%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(13) {
+  top: 49.800000000000004%;
+  left: 49.800000000000004%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(14) {
+  top: 49.800000000000004%;
+  left: 66.4%;
+}
+#video-configs .config.three-up-balance-left .mask:nth-child(15) {
+  top: 49.800000000000004%;
+  left: 83%;
+}
+#blocks {
   z-index: 2;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.block {
   position: relative;
   width: 16.6%;
   height: 16.6%;

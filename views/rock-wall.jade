@@ -11,13 +11,50 @@ block content
   - var blocksInMap = 24;
   - var unitsInBlock = 4;
   #wall
-    video(id='video-master', autoplay="true", loop="true")
-      source(src="")
-    - for(var i=0; i<blocksInMap; i++){
-      .block(id="block-#{i}")
-        - for(var j=0; j<unitsInBlock; j++){
-          .unit(id="unit-#{i}-#{j}", class="unit-#{j}")
+    #blocks
+      - for(var i=0; i<blocksInMap; i++){
+        .block(id="block-#{i}")
+          - for(var j=0; j<unitsInBlock; j++){
+            .unit(id="unit-#{i}-#{j}", class="unit-#{j}")
+          - }
+          video(class="video-all-up video-#{i}", autoplay="true", loop="true")
+            source(src="")
+      - }
+
+    #video-configs
+      .config.takeover
+        +video('0')
+      .config.two-up
+        - for(var i=0; i<8; i++){
+          +video(i)
         - }
-        video(id="video-#{i}", autoplay="true", loop="true")
-          source(src="")
-    - }
+      .config.three-up-tilt
+        - for(var i=0; i<15; i++){
+          +video(i)
+        - }
+      .config.three-up-balance
+        - for(var i=0; i<15; i++){
+          +video(i)
+        - }
+      .config.three-up
+        - for(var i=0; i<15; i++){
+          +video(i)
+        - }
+      .config.three-up-balance-right
+        - for(var i=0; i<15; i++){
+          +video(i)
+        - }
+      .config.three-up-balance-left
+        - for(var i=0; i<15; i++){
+          +video(i)
+        - }
+      .config.three-up-balance-right
+        - for(var i=0; i<15; i++){
+          +video(i)
+        - }
+
+
+mixin video(num)
+  .mask
+    video(class="vid-#{num}", autoplay='true', loop='true')
+      source(src='')
