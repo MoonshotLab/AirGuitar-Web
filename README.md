@@ -1,11 +1,15 @@
 # Air Guitar Web
+The companion web app for the [Air Guitar Rig](https://github.com/joelongstreet/AirGuitar-Rig). Contains two primary points of functionality:
+1. A projection mapped interface which acts as the "wall of rock". Accepts new videos from the rig and will trigger animations and mode transitions.
+1. Shareable takeaway content for the performer. Comes in the form of a "browseable" video.
 
-The companion web app for the [Air Guitar Rig](https://github.com/joelongstreet/AirGuitar-Rig).
+To run the app, you'll need a full mongo connection string and a post hook secret which matches the Air Guitar Rig app.
 
-Includes the following:
-* A 3d image browser so users can navigate an *awesome* (the content type of the navigable image set).
-* A POST webhook which can be called to update all connected sockets.
-* Share stuff...
+
+## Triggering Updates
+To trigger a new update to the app interface, just post to `/slowmo` with the following body params:
+* `secret` - The matching rig short secret
+* `shortCode` - The shortCode of the new slowmo video
 
 
 ## Environment Variables
