@@ -4,11 +4,10 @@ minVal = 16.6
   position absolute
   width 100%
   height 100%
-  z-index 3
+  z-index 1
 
   .config
     display none
-
     position absolute
     width 100%
     height 100%
@@ -20,10 +19,9 @@ minVal = 16.6
     width 16.6%
     height 16.6%
     overflow hidden
-    background-color green
-    opacity .5
 
   video
+    -webkit-filter: brightness(2);
     margin-left -50%
     width 200%
 
@@ -231,7 +229,6 @@ minVal = 16.6
       top minVal*3 + '%'
 
   .config.three-up-balance-left
-    display block
     .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
       width minVal*2 + '%'
       height minVal*2 + '%'

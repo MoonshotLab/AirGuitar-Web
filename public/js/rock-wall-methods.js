@@ -15,7 +15,7 @@ var animationClasses = [].concat(overflowClasses, nonOverflowClasses);
 
 // time: milliseconds it takes to init the transition
 // effect: the css class to apply or unapply
-// $units: an array of $.ified unites
+// $units: an array of $.ified units
 var toggleUnits = function(opts){
   var deferred = Q.defer();
 
@@ -66,48 +66,25 @@ var toggleUnits = function(opts){
 };
 
 
-var showFullScreenVideo = function(videoURL){
-  var deferred = Q.defer();
 
-  $('#video-master')[0].setAttribute('src', videoURL);
-  $('#video-master')[0].playbackRate = '.1';
-  $('#video-master').removeClass('hide');
+var colorUnits = function(){
+  var $units = $('.unit');
 
-  var allUnits = $('.unit');
+  $.each($units, function(i, unit){
+    var color = [
+      'rgb(',
+        Math.floor(Math.random() * 255) + 1,
+        ',',
+        Math.floor(Math.random() * 255) + 1,
+        ',',
+        Math.floor(Math.random() * 255) + 1,
+      ')'
+    ].join('');
 
-  toggleUnits(allUnits)
-    .then(deferred.resolve);
-
-  return deferred.promise;
-};
-
-
-var showBlockVideo = function(videoURL, blockIndex){
-  var deferred = Q.defer();
-  var $block = $('#block-' + blockIndex);
-
-  $block.find('video').removeClass('hide');
-  $block.find('video')[0].setAttribute('src', videoURL);
-  $block.find('video')[0].playbackRate = '.1';
-
-  toggleUnits($block.find('.unit'))
-    .then(deferred.resolve);
-
-  return deferred.promise;
-};
-
-
-var hideBlockVideo = function(blockIndex){
-  var deferred = Q.defer();
-  var $block = $('#block-' + blockIndex);
-
-  toggleUnits($block.find('.unit')).then(function(){
-    $block.find('video').addClass('hide');
-    deferred.resolve();
+    $(unit).css('backgroundColor', color);
   });
-
-  return deferred.promise;
 };
+
 
 
 var shuffle = function(o){

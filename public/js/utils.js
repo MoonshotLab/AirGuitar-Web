@@ -1,31 +1,17 @@
-var debugMode = false;
-var params = window.location.search.replace('?', '').split('&');
+// Create a global opts object
+var opts = {
+  videoPlaybackRate : '.25'
+};
 
-if(params.indexOf('debug=true') != -1)
-  debugMode = true;
-
-
-$(function(){
-  if(debugMode){
-    var $units = $('.unit');
-
-    $.each($units, function(i, unit){
-      var color = [
-        'rgb(',
-          Math.floor(Math.random() * 255) + 1,
-          ',',
-          Math.floor(Math.random() * 255) + 1,
-          ',',
-          Math.floor(Math.random() * 255) + 1,
-        ')'
-      ].join('');
-
-      $(unit).css('backgroundColor', color);
-    });
-  }
+var queryParams = location.search.replace('?', '').split('&');
+queryParams.forEach(function(param){
+  var split = param.split('=');
+  opts[split[0]] = split[1];
 });
 
 
+
+// Reverse the order of a named object
 var reverseNamedObject = function(obj){
   var arr = [];
   for(var key in obj){

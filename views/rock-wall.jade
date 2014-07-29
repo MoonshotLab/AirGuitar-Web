@@ -3,9 +3,12 @@ extends layout
 block head
   title Projection Mapper
   link(rel='stylesheet', href='/css/rock-wall.css')
+  script.
+    content.slowmos = !{JSON.stringify(slowmos)}
+  script(src='/js/utils.js')
   script(src='/js/rock-wall-methods.js')
   script(src='/js/rock-wall-procedures.js')
-  script(src='/js/utils.js')
+  script(src='/js/rock-wall.js')
 
 block content
   - var blocksInMap = 24;
@@ -22,33 +25,29 @@ block content
       - }
 
     #video-configs
-      .config.takeover
+      .config.takeover(data-config='takeover')
         +video('0')
-      .config.two-up
+      .config.multi.two-up(data-config='two-up')
         - for(var i=0; i<8; i++){
           +video(i)
         - }
-      .config.three-up-tilt
+      .config.multi.three-up-tilt(data-config='three-up-tilt')
         - for(var i=0; i<15; i++){
           +video(i)
         - }
-      .config.three-up-balance
+      .config.multi.three-up-balance(data-config='three-up-balance')
         - for(var i=0; i<15; i++){
           +video(i)
         - }
-      .config.three-up
+      .config.multi.three-up(data-config='three-up')
         - for(var i=0; i<15; i++){
           +video(i)
         - }
-      .config.three-up-balance-right
+      .config.multi.three-up-balance-right(data-config='three-up-balance-right')
         - for(var i=0; i<15; i++){
           +video(i)
         - }
-      .config.three-up-balance-left
-        - for(var i=0; i<15; i++){
-          +video(i)
-        - }
-      .config.three-up-balance-right
+      .config.multi.three-up-balance-left(data-config='three-up-balance-left')
         - for(var i=0; i<15; i++){
           +video(i)
         - }

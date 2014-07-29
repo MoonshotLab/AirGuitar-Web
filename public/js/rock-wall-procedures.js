@@ -12,6 +12,8 @@
 //   backwards: start from the x max point and y 0 point
 //              default: false
 var diagonalWaterfall = function(opts){
+  var deferred = Q.defer();
+
   if(!opts) opts = {};
   opts.time = opts.time || 100;
 
@@ -44,6 +46,8 @@ var diagonalWaterfall = function(opts){
 
           if(blocks[times])
             callBlock(blocks[times]);
+          else
+            deferred.resolve();
         }
       });
     };
@@ -59,6 +63,8 @@ var diagonalWaterfall = function(opts){
   for(var key in columns){
     callColumn(key);
   }
+
+  return deferred.promise;
 };
 
 
@@ -67,6 +73,8 @@ var diagonalWaterfall = function(opts){
 //   reverse: go from outside in
 //              default: false
 var blowout = function(opts){
+  var deferred = Q.defer();
+
   if(!opts) opts = {};
   opts.time = opts.time || 100;
 
@@ -94,6 +102,8 @@ var blowout = function(opts){
           iterations++;
           if(groups[iterations])
             callGroup(iterations);
+          else
+            deferred.resolve();
         }
       });
     });
@@ -103,6 +113,8 @@ var blowout = function(opts){
     reverseNamedObject(groups);
 
   callGroup(0);
+
+  return deferred.promise;
 };
 
 
@@ -111,6 +123,8 @@ var blowout = function(opts){
 //   reverse: go from right to left
 //              default: false
 var wipe = function(opts){
+  var deferred = Q.defer();
+
   if(!opts) opts = {};
   opts.time = opts.time || 100;
 
@@ -144,12 +158,16 @@ var wipe = function(opts){
   for(var key in columns){
     callColumn(key);
   }
+
+  return deferred.promise;
 };
 
 
 
 // Randomly select each fact and apply effect
 var evaporate = function(opts){
+  var deferred = Q.defer();
+
   if(!opts) opts = {};
   var units = $('.unit');
 
@@ -157,5 +175,7 @@ var evaporate = function(opts){
     time: opts.time,
     effect: opts.effect,
     $units: units
-  });
+  }).then(deferred.resolve);
+
+  return deferred.promise;
 };
