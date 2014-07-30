@@ -1,16 +1,26 @@
 extends layout
 
 block head
-  title Slowmos
+  title Share-Guitar
   script(src='/js/slowmo.js')
   script.
-    content.slowmos = !{JSON.stringify(slowmos)}
+    var preloadedSlowmos = !{JSON.stringify(slowmos)}
 
 block content
-  h1 Slowmos
-  #content
+  .container
+    h1 Share-Guitar
+
+    - if(offset==0){
+      #code-entry
+        label Enter your code to see your video
+        input(type='text', placeholder='00000')
+        input(type='button', value='OK')
+    - }
+
+    #content
 
   #pagination
-    - if(offset > 0)
-      a(href="/?limit=#{limit}&offset=#{offset-limit}") Prev
-    a(href="/?limit=#{limit}&offset=#{limit+offset}") Next
+    .container
+      - if(offset > 0)
+        a(href="/?limit=#{limit}&offset=#{offset-limit}").prev-page Prev Page
+      a(href="/?limit=#{limit}&offset=#{limit+offset}").next-page Next Page

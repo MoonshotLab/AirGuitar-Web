@@ -1,5 +1,15 @@
+var slowmoTemplate = _.template([
+  '<div class="slowmo-container">',
+    '<h3>Short Code: <%= shortCode %></h3>',
+    '<video id="slowmo-<%= shortCode %>" width="750" autoplay="true" loop="true">',
+      '<source src="<%=url%>"></source>',
+    '</video>',
+  '</div>'
+].join(''));
+
+
 var makeSlowmo = function(slowmo){
-  var rendered = templates.slowmo(slowmo);
+  var rendered = slowmoTemplate(slowmo);
   var selector = '#slowmo-' + slowmo.shortCode;
 
   $('#content').prepend(rendered);
@@ -11,8 +21,8 @@ socket.on('new-slowmo', makeSlowmo);
 
 
 $(function(){
-  if(content.slowmos){
-    content.slowmos.forEach(function(slowmo){
+  if(preloadedSlowmos){
+    preloadedSlowmos.forEach(function(slowmo){
       makeSlowmo(slowmo);
     });
   }

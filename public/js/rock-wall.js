@@ -100,7 +100,7 @@ var routine = function(){
   var $videos = $(selector).find('video');
 
   $videos.each(function(i, video){
-    $(video).attr('src', content.slowmos[i].url);
+    $(video).attr('src', preloadedSlowmos[i].url);
   });
 
   var showVids = function(){

@@ -4,7 +4,7 @@ block head
   title Projection Mapper
   link(rel='stylesheet', href='/css/rock-wall.css')
   script.
-    content.slowmos = !{JSON.stringify(slowmos.reverse())}
+    var preloadedSlowmos = !{JSON.stringify(slowmos)}
   script(src='/js/rock-wall-methods.js')
   script(src='/js/rock-wall-procedures.js')
   script(src='/js/rock-wall.js')
