@@ -1,9 +1,11 @@
 var slowmoTemplate = _.template([
   '<div class="slowmo-container">',
-    '<h3>Short Code: <%= shortCode %></h3>',
-    '<video id="slowmo-<%= shortCode %>" width="750" autoplay="true" loop="true">',
-      '<source src="<%=url%>"></source>',
-    '</video>',
+    "<a href='/slowmo/<%= shortCode %>'>",
+      // '<h3>Short Code: <%= shortCode %></h3>',
+      '<video id="slowmo-<%= shortCode %>" width="750" autoplay="true" loop="true">',
+        '<source src="<%=url%>"></source>',
+      '</video>',
+      '</a>',
   '</div>'
 ].join(''));
 
