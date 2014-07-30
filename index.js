@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(require('stylus').middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', routes.rockWall);
+app.get('/', routes.slowmos);
 app.get('/rock-wall', routes.rockWall);
 app.get('/slowmos', routes.slowmos);
 app.get('/slowmo/:shortCode', routes.findSlowmo);
