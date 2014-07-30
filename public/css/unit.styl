@@ -44,33 +44,14 @@
   position absolute
   -webkit-mask-repeat no-repeat
   -webkit-mask-size contain
-  width 100%
-  height 100%
+  width 200px
+  height 230px
   left 0
   top 0
   opacity 1
   -webkit-transform rotateX(0) rotateY(0) scale(1)
   &.animate
     -webkit-transition .2s linear all
-
-  // Position each unit
-  &.unit-0, &.colored-unit-0
-    top -.5%
-    width 102%
-    margin-left -1%
-  &.unit-1, &.colored-unit-1
-    -webkit-mask-position bottom right
-    left .5%
-    height 102%
-  &.unit-2, &.colored-unit-2
-    top .5%
-    width 102%
-    margin-left -1%
-    -webkit-mask-position bottom
-  &.unit-3, &.colored-unit-3
-    left -.5%
-    height 102%
-    margin-top -1%
 
 
   // --- Animations --- //
@@ -149,4 +130,4 @@
 for blockId in (0..24)
   for unitNum in (0..3)
     #unit-{blockId}-{unitNum}, #colored-unit-{blockId}-{unitNum}
-      -webkit-mask-image url('/masks/' + blockId%4 + '-' + unitNum + '.svg')
+      -webkit-mask-image url('/masks/' + blockId + '-' + unitNum + '.svg')
