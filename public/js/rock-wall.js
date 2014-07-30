@@ -1,3 +1,14 @@
+var configColors = {
+  'takeover': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}],
+  'two-up': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}],
+  'three-up-tilt': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}],
+  'three-up-balance': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}],
+  'three-up': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}],
+  'three-up-balance-right': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}],
+  'three-up-balance-left': [{0:'y'}, {1:'y'}, {2:'y'}, {3:'y'}, {4:'y'}, {5:'y'}, {6:'y'}, {7:'y'}, {8:'y'}, {9:'y'}, {10:'y'}, {11:'y'}, {12:'y'}, {13:'y'}, {14:'y'}, {15:'y'}, {16:'y'}, {17:'y'}, {18:'y'}, {19:'y'}, {20:'y'}, {21:'y'}, {22:'y'}, {23:'y'}]
+};
+
+
 // Look at the DOM and pick a random config
 var getRandomConfig = function(){
   var configs = [];
@@ -8,6 +19,18 @@ var getRandomConfig = function(){
 
   var index = Math.floor(Math.random() * configs.length);
   return configs[index];
+};
+
+
+
+// Apply the unit colors
+var addColorFacetClass = function(config){
+  var colorMap = configColors[config];
+  colorMap.forEach(function(map){
+    var key = Object.keys(map)[0];
+    var selector = '#block-' + key;
+    $(selector).addClass(map[key]);
+  });
 };
 
 
@@ -38,6 +61,7 @@ var showcase = function(slowmo){
   pendingShowcase = false;
 
   var showVid = function(){
+    addColorFacetClass('takeover');
     video.attr('src', slowmo.url);
     setPlaybackRates();
 
@@ -78,6 +102,7 @@ var routine = function(){
   });
 
   var showVids = function(){
+    addColorFacetClass('takeover');
     setPlaybackRates();
     $(selector).show();
 
@@ -92,7 +117,7 @@ var routine = function(){
 
     diagonalWaterfall({
       effect: 'fade',
-      time: 500
+      time: 100
     }).then(function(){
       clearVideos();
 
@@ -103,7 +128,7 @@ var routine = function(){
 
   // Give the videos just a second to get loaded in
   setTimeout(showVids, 1000);
-  setTimeout(hideVids, 15000);
+  // setTimeout(hideVids, 15000);
 };
 
 

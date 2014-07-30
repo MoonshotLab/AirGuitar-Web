@@ -19,9 +19,8 @@ block content
         .block(id="block-#{i}")
           - for(var j=0; j<unitsInBlock; j++){
             .unit(id="unit-#{i}-#{j}", class="unit-#{j}")
+            .colored-unit(id="colored-unit-#{i}-#{j}", class="colored-unit-#{j}")
           - }
-          video(class="video-all-up video-#{i}", autoplay="true", loop="true")
-            source(src="")
       - }
 
     #video-configs

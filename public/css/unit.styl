@@ -1,5 +1,50 @@
+.block.g
+  .colored-unit-0
+    background-color #15fe16
+  .colored-unit-1
+    background-color #00cf0f
+  .colored-unit-2
+    background-color #03892a
+  .colored-unit-3
+    background-color #17b723
+
+.block.r
+  .colored-unit-0
+    background-color #ff02b5
+  .colored-unit-1
+    background-color #ff0167
+  .colored-unit-2
+    background-color #ce1c2a
+  .colored-unit-3
+    background-color #ff010f
+
+.block.b
+  .colored-unit-0
+    background-color #00f7ff
+  .colored-unit-1
+    background-color #009cff
+  .colored-unit-2
+    background-color #2e03e8
+  .colored-unit-3
+    background-color #0049ff
+
+.block.y
+  .colored-unit-0
+    background-color #ffd902
+  .colored-unit-1
+    background-color #ffa902
+  .colored-unit-2
+    background-color #ff4903
+  .colored-unit-3
+    background-color #ff7903
+
+.colored-unit
+  z-index 1
+
 .unit
   z-index 2
+
+.unit, .colored-unit
   display block
   position absolute
   -webkit-mask-repeat no-repeat
@@ -14,20 +59,20 @@
     -webkit-transition .2s linear all
 
   // Position each unit
-  &.unit-0
+  &.unit-0, &.colored-unit-0
     top -.5%
     width 102%
     margin-left -1%
-  &.unit-1
+  &.unit-1, &.colored-unit-1
     -webkit-mask-position bottom right
     left .5%
     height 102%
-  &.unit-2
+  &.unit-2, &.colored-unit-2
     top .5%
     width 102%
     margin-left -1%
     -webkit-mask-position bottom
-  &.unit-3
+  &.unit-3, &.colored-unit-3
     left -.5%
     height 102%
     margin-top -1%
@@ -98,7 +143,11 @@
     -webkit-transform rotateZ(-180deg) scale(3)
 
 
+.colored-unit
+  opacity .5
+
+
 for blockId in (0..24)
   for unitNum in (0..3)
-    #unit-{blockId}-{unitNum}
+    #unit-{blockId}-{unitNum}, #colored-unit-{blockId}-{unitNum}
       -webkit-mask-image url('/masks/' + blockId%4 + '-' + unitNum + '.svg')
