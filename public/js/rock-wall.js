@@ -88,7 +88,7 @@ var showcase = function(slowmo){
 
 
   setTimeout(showVid, 1000);
-  setTimeout(hideVid, 15000);
+  setTimeout(hideVid, 30000);
 };
 
 
@@ -132,7 +132,7 @@ var routine = function(){
 
   // Give the videos just a second to get loaded in
   setTimeout(showVids, 1000);
-  setTimeout(hideVids, 15000);
+  setTimeout(hideVids, 30000);
 };
 
 
