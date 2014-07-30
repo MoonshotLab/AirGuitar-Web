@@ -28,6 +28,7 @@ var toggleUnits = function(opts){
   else
     $shuffled.parent().css('overflow', 'visible');
 
+
   $shuffled.each(function(i, unit){
     setTimeout(function(){
       if(i == $shuffled.length-1)
