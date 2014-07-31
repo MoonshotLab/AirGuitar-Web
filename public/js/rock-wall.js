@@ -59,6 +59,7 @@ var clearVideos = function(){
 var showcase = function(slowmo){
   var video = $('.config.takeover').find('video')[0];
   pendingShowcase = false;
+  preloadedSlowmos.unshift(slowmo);
 
   var showVid = function(){
     $('.config.takeover').show();
