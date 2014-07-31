@@ -1,10 +1,15 @@
 minVal = 16.6
+minH = 25
+minW = 16.6
 
 #video-configs
   position absolute
-  width 100%
-  height 100%
+  width 668px
+  height 540px
   z-index 1
+  // -webkit-transform rotateX(0deg) rotateY(2.5deg)
+  // left 85px
+  // top 13px
 
   .config
     display none
@@ -16,258 +21,286 @@ minVal = 16.6
     top 0
     left 0
     position absolute
-    width 16.6%
-    height 16.6%
+    width 100%
+    height 100%
     overflow hidden
+    -webkit-mask-position -63px -4px
+    -webkit-mask-size 147%
 
   video
-    -webkit-filter: brightness(2);
-    margin-left -50%
-    width 200%
-
-  .config.takeover
-    .mask
-      width minVal*4 + '%'
-      left minVal + '%'
-      top 0%
-      height 100%
+    -webkit-filter brightness(2)
+    position absolute
+    margin 0
 
   .config.two-up
     .mask:nth-child(1)
-      top minVal + '%'
-      height minVal*3 + '%'
-      width minVal*3 + '%'
-    .mask:nth-child(2)
-      left minVal*3 + '%'
-      height minVal*3 + '%'
-      width minVal*3 + '%'
-    .mask:nth-child(3)
-      left 0
-    .mask:nth-child(4)
-      left minVal + '%'
-    .mask:nth-child(5)
-      left minVal*2 + '%'
-    .mask:nth-child(6)
-      top minVal*3 + '%'
-      left minVal*3 + '%'
-    .mask:nth-child(7)
-      top minVal*3 + '%'
-      left minVal*4 + '%'
-    .mask:nth-child(8)
-      top minVal*3 + '%'
-      left minVal*5 + '%'
+      -webkit-mask-image url('/masks/two-up-0.svg')
+      video
+        top 10px
+        left 0
+        width 250px
+        display block
 
-  .config.three-up-tilt
-    .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
-      width minVal*2 + '%'
-      height minVal*2 + '%'
-    .mask:nth-child(1)
-      top minVal + '%'
     .mask:nth-child(2)
-      top minVal*2 + '%'
-      left minVal*2 + '%'
-    .mask:nth-child(3)
-      left minVal*4 + '%'
-    .mask:nth-child(4)
-      left 0
-    .mask:nth-child(5)
-      left minVal + '%'
-    .mask:nth-child(6)
-      left minVal*2 + '%'
-    .mask:nth-child(7)
-      left minVal*3 + '%'
-    .mask:nth-child(8)
-      top minVal + '%'
-      left minVal*2 + '%'
-    .mask:nth-child(9)
-      top minVal + '%'
-      left minVal*3 + '%'
-    .mask:nth-child(10)
-      top minVal*3 + '%'
-    .mask:nth-child(11)
-      top minVal*3 + '%'
-      left minVal + '%'
-    .mask:nth-child(12)
-      left minVal*4 + '%'
-      top minVal*2 + '%'
-    .mask:nth-child(13)
-      left minVal*5 + '%'
-      top minVal*2 + '%'
-    .mask:nth-child(14)
-      left minVal*4 + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(15)
-      left minVal*5 + '%'
-      top minVal*3 + '%'
+      -webkit-mask-image url('/masks/two-up-1.svg')
+      video
+        top 10px
+        left 125px
+        width 230px
 
-  .config.three-up-balance
-    .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
-      top 0%
-      width minVal*2 + '%'
-      height minVal*2 + '%'
-    .mask:nth-child(2)
-      top minVal + '%'
-      left minVal*2 + '%'
     .mask:nth-child(3)
-      left minVal*4 + '%'
-    .mask:nth-child(4)
-      left minVal*2 + '%'
-    .mask:nth-child(5)
-      left minVal*3 + '%'
-    .mask:nth-child(6)
-      left 0
-      top minVal*2 + '%'
-    .mask:nth-child(7)
-      top minVal*2 + '%'
-      left minVal + '%'
-    .mask:nth-child(8)
-      top minVal*3 + '%'
-      left 0
-    .mask:nth-child(9)
-      top minVal*3 + '%'
-      left minVal + '%'
-    .mask:nth-child(10)
-      top minVal*3 + '%'
-      left minVal*2 + '%'
-    .mask:nth-child(11)
-      top minVal*3 + '%'
-      left minVal*3 + '%'
-    .mask:nth-child(12)
-      top minVal*2 + '%'
-      left minVal*4 + '%'
-    .mask:nth-child(13)
-      top minVal*2 + '%'
-      left minVal*5 + '%'
-    .mask:nth-child(14)
-      top minVal*3 + '%'
-      left minVal*4 + '%'
-    .mask:nth-child(15)
-      top minVal*3 + '%'
-      left minVal*5 + '%'
+      -webkit-mask-image url('/masks/two-up-2.svg')
+      video
+        top 7px
+        left 220px
+        width 230px
 
-  .config.three-up
-    .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
-      top minVal + '%'
-      width minVal*2 + '%'
-      height minVal*2 + '%'
-    .mask:nth-child(2)
-      left minVal*2 + '%'
-    .mask:nth-child(3)
-      left minVal*4 + '%'
     .mask:nth-child(4)
-      left 0
-    .mask:nth-child(5)
-      left minVal + '%'
-    .mask:nth-child(6)
-      left minVal*2 + '%'
-    .mask:nth-child(7)
-      left minVal*3 + '%'
-    .mask:nth-child(8)
-      left minVal*4 + '%'
-    .mask:nth-child(9)
-      left minVal*5 + '%'
-    .mask:nth-child(10)
-      left 0
-      top minVal*3 + '%'
-    .mask:nth-child(11)
-      left minVal + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(12)
-      left minVal*2 + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(13)
-      left minVal*3 + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(14)
-      left minVal*4 + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(15)
-      left minVal*5 + '%'
-      top minVal*3 + '%'
+      -webkit-mask-image url('/masks/two-up-3.svg')
+      video
+        top 25%
+        width 750px
+        left -40px
 
-  .config.three-up-balance-right
-    .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
-      width minVal*2 + '%'
-      height minVal*2 + '%'
-    .mask:nth-child(1)
-      top minVal + '%'
-    .mask:nth-child(2)
-      left minVal*4 + '%'
-    .mask:nth-child(3)
-      left minVal*4 + '%'
-      top minVal*2 + '%'
-    .mask:nth-child(4)
-      left 0
     .mask:nth-child(5)
-      left minVal + '%'
-    .mask:nth-child(6)
-      left minVal*2 + '%'
-    .mask:nth-child(7)
-      left minVal*3 + '%'
-    .mask:nth-child(8)
-      left minVal*2 + '%'
-      top minVal + '%'
-    .mask:nth-child(9)
-      left minVal*3 + '%'
-      top minVal + '%'
-    .mask:nth-child(10)
-      left minVal*2 + '%'
-      top minVal*2 + '%'
-    .mask:nth-child(11)
-      left minVal*3 + '%'
-      top minVal*2 + '%'
-    .mask:nth-child(12)
-      top minVal*3 + '%'
-    .mask:nth-child(13)
-      left minVal + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(14)
-      left minVal*2 + '%'
-      top minVal*3 + '%'
-    .mask:nth-child(15)
-      left minVal*3 + '%'
-      top minVal*3 + '%'
+      -webkit-mask-image url('/masks/two-up-4.svg')
+      video
+        top 0
+        left 150px
+        width 700px
 
-  .config.three-up-balance-left
-    .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
-      width minVal*2 + '%'
-      height minVal*2 + '%'
-    .mask:nth-child(1)
-      left 0
-    .mask:nth-child(2)
-      top minVal*2 + '%'
-    .mask:nth-child(3)
-      top minVal + '%'
-      left minVal*4 + '%'
-    .mask:nth-child(4)
-      left minVal*2 + '%'
-    .mask:nth-child(5)
-      left minVal*3 + '%'
     .mask:nth-child(6)
-      left minVal*4 + '%'
+      -webkit-mask-image url('/masks/two-up-5.svg')
+      video
+        left 360px
+        top 347px
+        width 220px
+
     .mask:nth-child(7)
-      left minVal*5 + '%'
+      -webkit-mask-image url('/masks/two-up-6.svg')
+      video
+        left 470px
+        top 330px
+        width 220px
+
     .mask:nth-child(8)
-      top minVal + '%'
-      left minVal*2 + '%'
-    .mask:nth-child(9)
-      top minVal + '%'
-      left minVal*3 + '%'
-    .mask:nth-child(10)
-      top minVal*2 + '%'
-      left minVal*2 + '%'
-    .mask:nth-child(11)
-      top minVal*2 + '%'
-      left minVal*3 + '%'
-    .mask:nth-child(12)
-      top minVal*3 + '%'
-      left minVal*2 + '%'
-    .mask:nth-child(13)
-      top minVal*3 + '%'
-      left minVal*3 + '%'
-    .mask:nth-child(14)
-      top minVal*3 + '%'
-      left minVal*4 + '%'
-    .mask:nth-child(15)
-      top minVal*3 + '%'
-      left minVal*5 + '%'
+      -webkit-mask-image url('/masks/two-up-7.svg')
+      video
+        left 570px
+        top 320px
+        width 220px
+
+  // .config.three-up-tilt
+  //   .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
+  //     width minVal*2 + '%'
+  //     height minVal*2 + '%'
+  //   .mask:nth-child(1)
+  //     top minVal + '%'
+  //   .mask:nth-child(2)
+  //     top minVal*2 + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(3)
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(4)
+  //     left 0
+  //   .mask:nth-child(5)
+  //     left minVal + '%'
+  //   .mask:nth-child(6)
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(7)
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(8)
+  //     top minVal + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(9)
+  //     top minVal + '%'
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(10)
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(11)
+  //     top minVal*3 + '%'
+  //     left minVal + '%'
+  //   .mask:nth-child(12)
+  //     left minVal*4 + '%'
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(13)
+  //     left minVal*5 + '%'
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(14)
+  //     left minVal*4 + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(15)
+  //     left minVal*5 + '%'
+  //     top minVal*3 + '%'
+  //
+  // .config.three-up-balance
+  //   .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
+  //     top 0%
+  //     width minVal*2 + '%'
+  //     height minVal*2 + '%'
+  //   .mask:nth-child(2)
+  //     top minVal + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(3)
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(4)
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(5)
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(6)
+  //     left 0
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(7)
+  //     top minVal*2 + '%'
+  //     left minVal + '%'
+  //   .mask:nth-child(8)
+  //     top minVal*3 + '%'
+  //     left 0
+  //   .mask:nth-child(9)
+  //     top minVal*3 + '%'
+  //     left minVal + '%'
+  //   .mask:nth-child(10)
+  //     top minVal*3 + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(11)
+  //     top minVal*3 + '%'
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(12)
+  //     top minVal*2 + '%'
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(13)
+  //     top minVal*2 + '%'
+  //     left minVal*5 + '%'
+  //   .mask:nth-child(14)
+  //     top minVal*3 + '%'
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(15)
+  //     top minVal*3 + '%'
+  //     left minVal*5 + '%'
+  //
+  // .config.three-up
+  //   .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
+  //     top minVal + '%'
+  //     width minVal*2 + '%'
+  //     height minVal*2 + '%'
+  //   .mask:nth-child(2)
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(3)
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(4)
+  //     left 0
+  //   .mask:nth-child(5)
+  //     left minVal + '%'
+  //   .mask:nth-child(6)
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(7)
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(8)
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(9)
+  //     left minVal*5 + '%'
+  //   .mask:nth-child(10)
+  //     left 0
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(11)
+  //     left minVal + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(12)
+  //     left minVal*2 + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(13)
+  //     left minVal*3 + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(14)
+  //     left minVal*4 + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(15)
+  //     left minVal*5 + '%'
+  //     top minVal*3 + '%'
+  //
+  // .config.three-up-balance-right
+  //   .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
+  //     width minVal*2 + '%'
+  //     height minVal*2 + '%'
+  //   .mask:nth-child(1)
+  //     top minVal + '%'
+  //   .mask:nth-child(2)
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(3)
+  //     left minVal*4 + '%'
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(4)
+  //     left 0
+  //   .mask:nth-child(5)
+  //     left minVal + '%'
+  //   .mask:nth-child(6)
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(7)
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(8)
+  //     left minVal*2 + '%'
+  //     top minVal + '%'
+  //   .mask:nth-child(9)
+  //     left minVal*3 + '%'
+  //     top minVal + '%'
+  //   .mask:nth-child(10)
+  //     left minVal*2 + '%'
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(11)
+  //     left minVal*3 + '%'
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(12)
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(13)
+  //     left minVal + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(14)
+  //     left minVal*2 + '%'
+  //     top minVal*3 + '%'
+  //   .mask:nth-child(15)
+  //     left minVal*3 + '%'
+  //     top minVal*3 + '%'
+  //
+  // .config.three-up-balance-left
+  //   .mask:nth-child(1), .mask:nth-child(2), .mask:nth-child(3)
+  //     width minVal*2 + '%'
+  //     height minVal*2 + '%'
+  //   .mask:nth-child(1)
+  //     left 0
+  //   .mask:nth-child(2)
+  //     top minVal*2 + '%'
+  //   .mask:nth-child(3)
+  //     top minVal + '%'
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(4)
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(5)
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(6)
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(7)
+  //     left minVal*5 + '%'
+  //   .mask:nth-child(8)
+  //     top minVal + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(9)
+  //     top minVal + '%'
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(10)
+  //     top minVal*2 + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(11)
+  //     top minVal*2 + '%'
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(12)
+  //     top minVal*3 + '%'
+  //     left minVal*2 + '%'
+  //   .mask:nth-child(13)
+  //     top minVal*3 + '%'
+  //     left minVal*3 + '%'
+  //   .mask:nth-child(14)
+  //     top minVal*3 + '%'
+  //     left minVal*4 + '%'
+  //   .mask:nth-child(15)
+  //     top minVal*3 + '%'
+  //     left minVal*5 + '%'

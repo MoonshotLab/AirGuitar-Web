@@ -39,7 +39,7 @@
     background-color #ff7903
 
 
-.unit, .colored-unit
+.unit, .colored-unit, .mask
   display block
   position absolute
   -webkit-mask-repeat no-repeat
@@ -49,9 +49,8 @@
   left 0
   top 0
   opacity 1
-  -webkit-transform rotateX(0) rotateY(0) scale(1)
   &.animate
-    -webkit-transition .2s linear all
+    -webkit-transition .2s linear opacity
 
 
   // --- Animations --- //
@@ -96,27 +95,6 @@
   &.unit-3.move-fade
     top 100%
     opacity 0
-
-  // Perspective Shift
-  &.unit-0.perspective
-    top -100%
-    -webkit-transform rotateX(90deg)
-  &.unit-1.perspective
-    left 100%
-    -webkit-transform rotateY(90deg)
-  &.unit-2.perspective
-    top 100%
-    -webkit-transform rotateX(90deg)
-  &.unit-3.perspective
-    left -100%
-    -webkit-transform rotateY(90deg)
-
-  &.rotate-scale.unit-0, &.rotate-scale.unit-2
-    opacity 0
-    -webkit-transform rotateZ(180deg) scale(3)
-  &.rotate-scale.unit-1, &.rotate-scale.unit-3
-    opacity 0
-    -webkit-transform rotateZ(-180deg) scale(3)
 
 
 .colored-unit

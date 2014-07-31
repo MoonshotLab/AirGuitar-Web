@@ -95,7 +95,8 @@ var showcase = function(slowmo){
 
 // Pick a random routine and run dat
 var routine = function(){
-  var config = getRandomConfig();
+  // var config = getRandomConfig();
+  var config = 'two-up';
   var selector = '.config.' + config;
   var $videos = $(selector).find('video');
 
@@ -132,7 +133,7 @@ var routine = function(){
 
   // Give the videos just a second to get loaded in
   setTimeout(showVids, 1000);
-  setTimeout(hideVids, 30000);
+  // setTimeout(hideVids, 30000);
 };
 
 
@@ -148,5 +149,6 @@ socket.on('new-slowmo', function(slowmo){
 // Kick us off with a routine and a random colorer
 $(function(){
   colorUnits();
+  // addColorFacetClass('two-up');
   routine();
 });
