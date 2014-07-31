@@ -11,8 +11,9 @@ body {
 }
 #wall {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 68px;
+  top: 1px;
+  -webkit-transform: scale(0.96);
 }
 #video-configs {
   position: absolute;

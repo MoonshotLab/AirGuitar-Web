@@ -152,5 +152,6 @@ socket.on('new-slowmo', function(slowmo){
 // Kick us off with a routine and a random colorer
 $(function(){
   colorUnits();
-  routine();
+  if(!opts.debug)
+    routine();
 });
