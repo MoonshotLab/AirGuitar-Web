@@ -56,15 +56,15 @@ var clearVideos = function(){
 
 
 // Showcases a primary video
-var showcase = function(slowmo){
+var showcase = function(){
   var video = $('.config.takeover').find('video')[0];
-  pendingShowcase = false;
-  preloadedSlowmos.unshift(slowmo);
+  preloadedSlowmos.unshift(pendingShowcase);
 
   var showVid = function(){
+    console.log('showing', preloadedSlowmos);
     $('.config.takeover').show();
     addColorFacetClass('takeover');
-    $(video).attr('src', slowmo.url);
+    $(video).attr('src', pendingShowcase.url);
     setPlaybackRates();
 
     diagonalWaterfall({
@@ -83,6 +83,8 @@ var showcase = function(slowmo){
     }).then(function(){
       setTimeout(function(){
         $('.config.takeover').hide();
+        pendingShowcase = false;
+        console.log('hiding showcase', preloadedSlowmos);
         clearVideos();
         routine();
       }, 3000);
@@ -145,7 +147,6 @@ var routine = function(){
 // Listen to new slowmo events and schedule them
 var pendingShowcase = false;
 socket.on('new-slowmo', function(slowmo){
-  console.log('received slowmo...', slowmo);
   pendingShowcase = slowmo;
 });
 
