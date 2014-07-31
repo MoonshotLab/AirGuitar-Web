@@ -245,6 +245,54 @@ body {
 .block.y .colored-unit-3 {
   background-color: #ff7903;
 }
+.block.green .unit-0 {
+  background-color: #15fe16;
+}
+.block.green .unit-1 {
+  background-color: #00cf0f;
+}
+.block.green .unit-2 {
+  background-color: #03892a;
+}
+.block.green .unit-3 {
+  background-color: #17b723;
+}
+.block.red .unit-0 {
+  background-color: #ff02b5;
+}
+.block.red .unit-1 {
+  background-color: #ff0167;
+}
+.block.red .unit-2 {
+  background-color: #ce1c2a;
+}
+.block.red .unit-3 {
+  background-color: #ff010f;
+}
+.block.blue .unit-0 {
+  background-color: #00f7ff;
+}
+.block.blue .unit-1 {
+  background-color: #009cff;
+}
+.block.blue .unit-2 {
+  background-color: #2e03e8;
+}
+.block.blue .unit-3 {
+  background-color: #0049ff;
+}
+.block.yellow .unit-0 {
+  background-color: #ffd902;
+}
+.block.yellow .unit-1 {
+  background-color: #ffa902;
+}
+.block.yellow .unit-2 {
+  background-color: #ff4903;
+}
+.block.yellow .unit-3 {
+  background-color: #ff7903;
+}
 .unit,
 .colored-unit,
 .mask {

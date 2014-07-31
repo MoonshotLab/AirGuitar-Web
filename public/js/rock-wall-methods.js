@@ -69,20 +69,12 @@ var toggleUnits = function(opts){
 
 
 var colorUnits = function(){
-  var $units = $('.unit');
+  var $blocks = $('.block');
+  var colors = ['yellow', 'blue', 'green', 'red'];
 
-  $.each($units, function(i, unit){
-    var color = [
-      'rgb(',
-        Math.floor(Math.random() * 255) + 1,
-        ',',
-        Math.floor(Math.random() * 255) + 1,
-        ',',
-        Math.floor(Math.random() * 255) + 1,
-      ')'
-    ].join('');
-
-    $(unit).css('backgroundColor', color);
+  $.each($blocks, function(i, block){
+    var klass = colors[Math.floor(Math.random() * colors.length)];
+    $(block).addClass(klass);
   });
 };
 
