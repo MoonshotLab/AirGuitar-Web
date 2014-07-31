@@ -6,10 +6,16 @@ block head
   script.
     var switchTo5x=true;
   script(src="http://w.sharethis.com/button/buttons.js")
+  link(rel='stylesheet', href='/css/slowmo.css')
   script.
     stLight.options({publisher: "9a60c831-fc15-4069-b4e3-c47e81ce5b0f", doNotHash: false, doNotCopy: false, hashAddressBar: false});
   script.
     var preloadedSlowmos = [!{JSON.stringify(slowmo)}]
+
+  meta(property="og:title", content="US Air Guitar - Wall of Rock")
+  meta(property="og:type", content="video.movie")
+  meta(property="og:url", content="http://www.share-guitar.com/#{slowmo.shortCode}")
+  meta(property="og:image", content="http://blog.vegas.com/wp-content/uploads/2010/05/airguitar.jpg")
 
 block content
   .container
