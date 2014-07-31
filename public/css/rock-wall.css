@@ -41,6 +41,16 @@ body {
   position: absolute;
   margin: 0;
 }
+#video-configs .config.takeover .mask {
+  width: 100%;
+  height: 100%;
+  -webkit-mask-size: 101%;
+  -webkit-mask-position: 0 12px;
+  -webkit-mask-image: url("/masks/showcase.svg");
+}
+#video-configs .config.takeover .mask video {
+  margin-left: -50%;
+}
 #video-configs .config.two-up .mask:nth-child(1) {
   -webkit-mask-image: url("/masks/two-up-0.svg");
 }

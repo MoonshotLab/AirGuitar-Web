@@ -61,8 +61,9 @@ var showcase = function(slowmo){
   pendingShowcase = false;
 
   var showVid = function(){
+    $('.config.takeover').show();
     addColorFacetClass('takeover');
-    video.attr('src', slowmo.url);
+    $(video).attr('src', slowmo.url);
     setPlaybackRates();
 
     diagonalWaterfall({
@@ -80,6 +81,7 @@ var showcase = function(slowmo){
       time: 500
     }).then(function(){
       setTimeout(function(){
+        $('.config.takeover').hide();
         clearVideos();
         routine();
       }, 3000);
@@ -123,6 +125,7 @@ var routine = function(){
       time: 300
     }).then(function(){
       setTimeout(function(){
+        $(selector).show();
         clearVideos();
 
         if(!pendingShowcase) routine();
@@ -133,7 +136,7 @@ var routine = function(){
 
   // Give the videos just a second to get loaded in
   setTimeout(showVids, 1000);
-  // setTimeout(hideVids, 30000);
+  setTimeout(hideVids, 30000);
 };
 
 
@@ -145,10 +148,8 @@ socket.on('new-slowmo', function(slowmo){
 });
 
 
-
 // Kick us off with a routine and a random colorer
 $(function(){
   colorUnits();
-  // addColorFacetClass('two-up');
   routine();
 });
