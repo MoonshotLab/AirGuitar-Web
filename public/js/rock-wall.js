@@ -145,6 +145,7 @@ var routine = function(){
 // Listen to new slowmo events and schedule them
 var pendingShowcase = false;
 socket.on('new-slowmo', function(slowmo){
+  console.log('received slowmo...', slowmo);
   pendingShowcase = slowmo;
 });
 
