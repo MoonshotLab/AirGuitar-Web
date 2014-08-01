@@ -49,9 +49,6 @@ body {
   -webkit-mask-position: 0 12px;
   -webkit-mask-image: url("/masks/showcase.svg");
 }
-#video-configs .config.takeover .mask video {
-  margin-left: -50%;
-}
 #video-configs .config.two-up .mask:nth-child(1) {
   -webkit-mask-image: url("/masks/two-up-0.svg");
 }
@@ -144,7 +141,7 @@ body {
 #block-9,
 #block-10,
 #block-11 {
-  top: 105px;
+  top: 138px;
 }
 #block-12,
 #block-13,
@@ -152,7 +149,7 @@ body {
 #block-15,
 #block-16,
 #block-17 {
-  top: 210px;
+  top: 276px;
 }
 #block-18,
 #block-19,
@@ -160,7 +157,7 @@ body {
 #block-21,
 #block-22,
 #block-23 {
-  top: 315px;
+  top: 414px;
 }
 #block-0,
 #block-6,
@@ -172,31 +169,31 @@ body {
 #block-7,
 #block-13,
 #block-19 {
-  left: 105px;
+  left: 138px;
 }
 #block-2,
 #block-8,
 #block-14,
 #block-20 {
-  left: 210px;
+  left: 276px;
 }
 #block-3,
 #block-9,
 #block-15,
 #block-21 {
-  left: 315px;
+  left: 414px;
 }
 #block-4,
 #block-10,
 #block-16,
 #block-22 {
-  left: 420px;
+  left: 552px;
 }
 #block-5,
 #block-11,
 #block-17,
 #block-23 {
-  left: 525px;
+  left: 690px;
 }
 .block.g .colored-unit-0 {
   background-color: #15fe16;
@@ -302,7 +299,7 @@ body {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: contain;
   width: 200px;
-  height: 230px;
+  height: 280px;
   left: 0;
   top: 0;
   opacity: 1;

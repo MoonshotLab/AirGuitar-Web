@@ -107,7 +107,7 @@ var routine = function(){
       effect: 'fade',
       time: 200
     });
-  }; 
+  };
 
   var hideVids = function(){
     colorUnits();
@@ -128,7 +128,7 @@ var routine = function(){
 
   // Give the videos just a second to get loaded in
   setTimeout(showVids, 1000);
-  setTimeout(hideVids, 30000);
+  // setTimeout(hideVids, 30000);
 };
 
 
