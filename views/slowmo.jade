@@ -12,10 +12,7 @@ block head
       publisher: "9a60c831-fc15-4069-b4e3-c47e81ce5b0f",
       doNotHash: false,
       doNotCopy: false,
-      hashAddressBar: false,
-      title: "US Air Guitar - Wall of Rock",
-      summary: "Wall of Rock, US Air Guitar",
-      image: "http://share-guitar.com/social.png"
+      hashAddressBar: false
     });
   script.
     var preloadedSlowmos = [!{JSON.stringify(slowmo)}]
@@ -32,9 +29,9 @@ block head
 block content
   .container
     h1 Share-Guitar
-    #content
+    #content.solo
 
-    h4 Share This
-    span.st_facebook_large(displayText='Facebook')
-    span.st_twitter_large(displayText='Tweet')
-    span.st_email_large(displayText='Email')
+      h4 Share This
+      span.st_facebook_large(displayText='Facebook')
+      span.st_twitter_large(displayText='Tweet')
+      span.st_email_large(displayText='Email')
