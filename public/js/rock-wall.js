@@ -107,7 +107,7 @@ var routine = function(){
       effect: 'fade',
       time: 200
     });
-  };
+  }; 
 
   var hideVids = function(){
     colorUnits();
