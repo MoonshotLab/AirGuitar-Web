@@ -13,8 +13,12 @@ block content
       a(href='/') Share-Guitar
     #content
 
-  #footer
+  footer
     .container
       - if(offset > 0)
-        a(href="/?limit=#{limit}&offset=#{offset-limit}").prev-page Prev Page
-      a(href="/?limit=#{limit}&offset=#{limit+offset}").next-page Next Page
+        a.prev(href="/?limit=#{limit}&offset=#{offset-limit}").prev-page Prev Page
+          span.arrow &larr;
+      a.next(href="/?limit=#{limit}&offset=#{limit+offset}").next-page Next Page
+        span.arrow &rarr;
+
+    a.credits(target='_blank', href='http://moonshot.barkleyus.com/')

@@ -1,12 +1,6 @@
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
 body {
   background-color: #000;
   color: #fff;
-  padding: 0;
   margin: 0;
   font-family: "Helvetica";
 }
@@ -36,18 +30,41 @@ video {
   border: 5px solid #000;
   box-sizing: border-box;
 }
-#footer {
-  padding: 20px 0;
+footer {
   width: 100%;
-  font-size: 130%;
-  background-color: #fff;
-  border-top: 2px solid #808080;
-  position: fixed;
+  font-size: 100%;
   bottom: 0;
 }
-#footer a {
-  color: #000;
+footer a.next,
+footer a.prev {
+  display: block;
   text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+footer a.next {
+  padding: 20px 20px 0 50px;
+}
+footer a.prev {
+  padding: 20px 50px 0 20px;
+}
+footer span.arrow {
+  color: #bd3013;
+}
+footer a.prev span.arrow {
+  float: left;
+  padding-right: 10px;
+}
+footer a.next span.arrow {
+  padding-left: 10px;
+}
+footer a.credits {
+  margin-top: 50px;
+  width: 100%;
+  height: 100px;
+  display: block;
+  background: url("/footer.jpg") no-repeat top center;
+  background-size: contain;
 }
 .next-page {
   float: right;
