@@ -1,7 +1,10 @@
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
+
 var slowmoTemplate = _.template([
   '<div class="slowmo-container">',
     "<a href='/slowmo/<%= shortCode %>'>",
-      '<video id="slowmo-<%= shortCode %>" autoplay loop controls poster="<%=poster%>">',
+      '<video id="slowmo-<%= shortCode %>" autoplay loop poster="<%=poster%>">',
         '<source src="<%=mp4%>" type="video/mp4"></source>',
         '<source src="<%=webm%>" type="video/webm"></source>',
       '</video>',
@@ -20,6 +23,9 @@ var makeSlowmo = function(slowmo){
   var selector = '#slowmo-' + slowmo.shortCode;
 
   $('#content').prepend(rendered);
+
+  if(isAndroid)
+    $(selector).attr('controls', true);
 };
 
 
