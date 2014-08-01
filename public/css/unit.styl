@@ -145,6 +145,12 @@
   z-index 2
 
 
+body.takeover
+  .block:nth-child(1), .block:nth-child(6), .block:nth-child(7), .block:nth-child(12), .block:nth-child(13), .block:nth-child(18), .block:nth-child(19), .block:nth-child(24)
+    .colored-unit
+      opacity 1
+
+
 for blockId in (0..24)
   for unitNum in (0..3)
     #unit-{blockId}-{unitNum}, #colored-unit-{blockId}-{unitNum}

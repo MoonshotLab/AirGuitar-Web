@@ -385,6 +385,16 @@ body {
 .unit {
   z-index: 2;
 }
+body.takeover .block:nth-child(1) .colored-unit,
+body.takeover .block:nth-child(6) .colored-unit,
+body.takeover .block:nth-child(7) .colored-unit,
+body.takeover .block:nth-child(12) .colored-unit,
+body.takeover .block:nth-child(13) .colored-unit,
+body.takeover .block:nth-child(18) .colored-unit,
+body.takeover .block:nth-child(19) .colored-unit,
+body.takeover .block:nth-child(24) .colored-unit {
+  opacity: 1;
+}
 #unit-0-0,
 #colored-unit-0-0 {
   -webkit-mask-image: url("/masks/0-0.svg");

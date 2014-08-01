@@ -61,7 +61,7 @@ var showcase = function(){
   preloadedSlowmos.unshift(pendingShowcase);
 
   var showVid = function(){
-    console.log('showing', preloadedSlowmos);
+    $('body').addClass('takeover');
     $('.config.takeover').show();
     addColorFacetClass('takeover');
     $(video).attr('src', pendingShowcase.url);
@@ -69,7 +69,7 @@ var showcase = function(){
 
     diagonalWaterfall({
       effect: 'fade',
-      time: 500
+      time: 200
     });
   };
 
@@ -79,12 +79,12 @@ var showcase = function(){
 
     diagonalWaterfall({
       effect: 'fade',
-      time: 500
+      time: 200
     }).then(function(){
       setTimeout(function(){
+        $('body').removeClass('takeover');
         $('.config.takeover').hide();
         pendingShowcase = false;
-        console.log('hiding showcase', preloadedSlowmos);
         clearVideos();
         routine();
       }, 3000);
@@ -116,7 +116,7 @@ var routine = function(){
 
     diagonalWaterfall({
       effect: 'fade',
-      time: 500
+      time: 200
     });
   };
 
@@ -125,7 +125,7 @@ var routine = function(){
 
     diagonalWaterfall({
       effect: 'fade',
-      time: 300
+      time: 200
     }).then(function(){
       setTimeout(function(){
         $(selector).show();
