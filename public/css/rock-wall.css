@@ -45,8 +45,8 @@ body {
 #video-configs .config.takeover .mask {
   width: 100%;
   height: 100%;
-  -webkit-mask-size: 101%;
-  -webkit-mask-position: 0 12px;
+  -webkit-mask-size: 102%;
+  -webkit-mask-position: 6px 34px;
   -webkit-mask-image: url("/masks/showcase.svg");
 }
 #video-configs .config.two-up .mask:nth-child(1) {
