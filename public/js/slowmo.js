@@ -7,9 +7,9 @@ var slowmoTemplate = _.template([
       '</video>',
       '</a>',
       '<div class="social">',
-        '<span class="st_facebook_large" displayText="Facebook" st_title="Sharing is great!"></span>',
-        '<span class="st_twitter_large" displayText="Tweet"></span>',
-        '<span class="st_email_large" displayText="Email"></span>',
+        '<span class="st_facebook_large" displayText="Facebook" st_url="http://share-guitar.com/slowmo/<%= shortCode %>"></span>',
+        '<span class="st_twitter_large" displayText="Tweet" st_url="http://share-guitar.com/slowmo/<%= shortCode %>"></span>',
+        '<span class="st_email_large" displayText="Email" st_url="http://share-guitar.com/slowmo/<%= shortCode %>"></span>',
       '</div>',
   '</div>'
 ].join(''));
