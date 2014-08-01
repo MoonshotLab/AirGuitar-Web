@@ -6,6 +6,11 @@ var slowmoTemplate = _.template([
         '<source src="<%=webm%>" type="video/webm"></source>',
       '</video>',
       '</a>',
+      '<div class="social">',
+        '<span class="st_facebook_large" displayText="Facebook" st_title="Sharing is great!"></span>',
+        '<span class="st_twitter_large" displayText="Tweet"></span>',
+        '<span class="st_email_large" displayText="Email"></span>',
+      '</div>',
   '</div>'
 ].join(''));
 
@@ -27,4 +32,12 @@ $(function(){
       makeSlowmo(slowmo);
     });
   }
+
+  stLight.options({
+    publisher: "9a60c831-fc15-4069-b4e3-c47e81ce5b0f",
+    doNotHash: false,
+    doNotCopy: false,
+    hashAddressBar: false
+  });
+
 });

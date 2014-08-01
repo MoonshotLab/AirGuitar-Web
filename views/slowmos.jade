@@ -4,6 +4,7 @@ block head
   title Share-Guitar
   link(rel='stylesheet', href='/css/slowmo.css')
   script(src='/js/slowmo.js')
+  script(src="http://w.sharethis.com/button/buttons.js")
   script.
     var preloadedSlowmos = !{JSON.stringify(slowmos)}
 
@@ -12,13 +13,16 @@ block content
     h1
       a(href='/') Share-Guitar
     #content
+      -if(!slowmos.length)
+        h1.thats-all that's all
 
   footer
     .container
       - if(offset > 0)
         a.prev(href="/?limit=#{limit}&offset=#{offset-limit}").prev-page Prev Page
           span.arrow &larr;
-      a.next(href="/?limit=#{limit}&offset=#{limit+offset}").next-page Next Page
-        span.arrow &rarr;
+      - if(slowmos.length)
+        a.next(href="/?limit=#{limit}&offset=#{limit+offset}").next-page Next Page
+          span.arrow &rarr;
 
     a.credits(target='_blank', href='http://moonshot.barkleyus.com/')

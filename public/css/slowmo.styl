@@ -1,12 +1,15 @@
 body
   background-color black
   color white
-  // padding 0 0 200px 0
   margin 0
   font-family "Helvetica"
 
+h1.thats-all
+  margin-top 75px
+  margin-bottom 75px
 
 h1
+  text-align center
   margin 0
   a
     background url('/header.jpg') no-repeat top center
@@ -25,7 +28,6 @@ h1
 
 
 video
-  // margin-left -50%
   width 100%
 
 
@@ -68,6 +70,23 @@ footer
     background url('/footer.jpg') no-repeat top center
     background-size contain
 
+.social
+  float right
+  .stButton
+    width 25px
+    img
+      display none
+  .stLarge
+    background-size 100%
+  .st_facebook_large
+    .stLarge
+      background-image url('/social_fb.jpg') !important
+  .st_twitter_large
+    .stLarge
+      background-image url('/social_tweet.jpg') !important
+  .st_email_large
+    .stLarge
+      background-image url('/social_email.jpg') !important
 
 .next-page
   float right
@@ -90,8 +109,6 @@ footer
     height 100%
     float left
     display inline-block
-    // video
-    //   margin-left -25%
 
 
 @media only screen and (max-width: 767px)
