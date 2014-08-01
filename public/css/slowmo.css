@@ -1,3 +1,8 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
 body {
   background-color: #000;
   color: #fff;
@@ -6,35 +11,28 @@ body {
   font-family: "Helvetica";
 }
 .container {
-  width: 400px;
+  max-width: 960px;
   margin: auto;
   overflow: hidden;
 }
 video {
-  margin-left: -125px;
+  margin-left: -25%;
+  width: 150%;
 }
 .slowmo-container {
-  width: 100%;
-  height: 100%;
   overflow: hidden;
-  color: rgba(255,255,255,0.75);
   margin-bottom: 50px;
 }
-.slowmo-container a {
-  color: #fff;
-  text-decoration: none;
-}
-.slowmo-container h3 {
-  margin-bottom: 10px;
-}
-#pagination {
+#footer {
   padding: 20px 0;
   width: 100%;
   font-size: 130%;
   background-color: #fff;
   border-top: 2px solid #808080;
+  position: fixed;
+  bottom: 0;
 }
-#pagination a {
+#footer a {
   color: #000;
   text-decoration: none;
 }
@@ -43,4 +41,23 @@ video {
 }
 .prev-page {
   float: left;
+}
+@media only screen and (min-width: 768px) {
+  .slowmo-container {
+    width: 25%;
+    margin-left: 5%;
+    height: 100%;
+    float: left;
+    display: inline-block;
+  }
+  .slowmo-container video {
+    margin-left: -25%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .slowmo-container {
+    margin-left: 12%;
+    width: 75%;
+    display: block;
+  }
 }
