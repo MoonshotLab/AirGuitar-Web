@@ -11,6 +11,9 @@ body {
   font-family: "Helvetica";
 }
 h1 {
+  margin: 0;
+}
+h1 a {
   background: url("/header.jpg") no-repeat top center;
   margin: 0 0 10px 0;
   background-size: cover;
@@ -25,8 +28,7 @@ h1 {
   overflow: hidden;
 }
 video {
-  margin-left: -50%;
-  width: 175%;
+  width: 100%;
 }
 .slowmo-container {
   overflow: hidden;
@@ -66,12 +68,9 @@ video {
     float: left;
     display: inline-block;
   }
-  .slowmo-container video {
-    margin-left: -25%;
-  }
 }
 @media only screen and (max-width: 767px) {
-  h1 {
+  h1 a {
     height: 200px;
     width: 100%;
     background-size: contain;

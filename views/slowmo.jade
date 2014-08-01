@@ -21,14 +21,15 @@ block head
   meta(property="og:title", content="My performance in The Wall of Rock")
   meta(property="og:description", content="The world's first air guitar museum is presented by US Air Guitar, who will visit Kansas City on August 9 to hold the 2014 US Air Guitar National Finals at The Midland Theatre. #usairguitar")
   meta(property="og:type", content="video.movie")
-  meta(property="og:video" content="#{slowmo.url}")
+  meta(property="og:video" content="#{slowmo.mp4}")
   meta(property="og:site_name", content="Share-Guitar")
   meta(property="og:url", content="http://www.share-guitar.com/slowmo/#{slowmo.shortCode}")
-  meta(property="og:image", content="http://share-guitar.com/social.png")
+  meta(property="og:image", content="#{slowmo.poster}")
 
 block content
   .container
-    h1 Share-Guitar
+    h1
+      a(href='/') Share-Guitar
     #content.solo
 
       h4 Share This

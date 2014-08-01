@@ -35,16 +35,6 @@ var addColorFacetClass = function(config){
 
 
 
-// Find all videos and set their playback rate to
-// the URL param
-var setPlaybackRates = function(){
-  $('video').each(function(i, video){
-    video.playbackRate = opts.videoPlaybackRate;
-  });
-};
-
-
-
 // Clear the videos of their src attribute so we're
 // not playing like a billion at one time
 var clearVideos = function(){
@@ -64,8 +54,7 @@ var showcase = function(){
     $('body').addClass('takeover');
     $('.config.takeover').show();
     addColorFacetClass('takeover');
-    $(video).attr('src', pendingShowcase.url);
-    setPlaybackRates();
+    $(video).attr('src', pendingShowcase.mp4);
 
     diagonalWaterfall({
       effect: 'fade',
@@ -105,13 +94,13 @@ var routine = function(){
   var selector = '.config.' + config;
   var $videos = $(selector).find('video');
 
+  shuffle(preloadedSlowmos);
   $videos.each(function(i, video){
-    $(video).attr('src', preloadedSlowmos[i].url);
+    $(video).attr('src', preloadedSlowmos[i].mp4);
   });
 
   var showVids = function(){
     addColorFacetClass(config);
-    setPlaybackRates();
     $(selector).show();
 
     diagonalWaterfall({
@@ -139,7 +128,7 @@ var routine = function(){
 
   // Give the videos just a second to get loaded in
   setTimeout(showVids, 1000);
-  setTimeout(hideVids, 30000);
+  // setTimeout(hideVids, 30000);
 };
 
 

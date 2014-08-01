@@ -56,8 +56,8 @@ body {
   -webkit-mask-image: url("/masks/two-up-0.svg");
 }
 #video-configs .config.two-up .mask:nth-child(1) video {
-  top: 10px;
-  left: 0;
+  top: -20px;
+  left: -50px;
   width: 250px;
   display: block;
 }
@@ -81,9 +81,9 @@ body {
   -webkit-mask-image: url("/masks/two-up-3.svg");
 }
 #video-configs .config.two-up .mask:nth-child(4) video {
-  top: 25%;
+  top: 0;
   width: 750px;
-  left: -40px;
+  left: -150px;
 }
 #video-configs .config.two-up .mask:nth-child(5) {
   -webkit-mask-image: url("/masks/two-up-4.svg");
@@ -97,8 +97,8 @@ body {
   -webkit-mask-image: url("/masks/two-up-5.svg");
 }
 #video-configs .config.two-up .mask:nth-child(6) video {
-  left: 360px;
-  top: 347px;
+  left: 320px;
+  top: 300px;
   width: 220px;
 }
 #video-configs .config.two-up .mask:nth-child(7) {
@@ -106,15 +106,15 @@ body {
 }
 #video-configs .config.two-up .mask:nth-child(7) video {
   left: 470px;
-  top: 330px;
+  top: 300px;
   width: 220px;
 }
 #video-configs .config.two-up .mask:nth-child(8) {
   -webkit-mask-image: url("/masks/two-up-7.svg");
 }
 #video-configs .config.two-up .mask:nth-child(8) video {
-  left: 570px;
-  top: 320px;
+  left: 460px;
+  top: 300px;
   width: 220px;
 }
 #blocks {
