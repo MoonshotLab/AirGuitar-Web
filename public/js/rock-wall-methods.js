@@ -74,6 +74,7 @@ var colorUnits = function(){
 
   $.each($blocks, function(i, block){
     var klass = colors[Math.floor(Math.random() * colors.length)];
+    $(block).removeClass(colors.join(' '));
     $(block).addClass(klass);
   });
 };
