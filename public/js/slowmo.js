@@ -1,7 +1,7 @@
 var slowmoTemplate = _.template([
   '<div class="slowmo-container">',
     "<a href='/slowmo/<%= shortCode %>'>",
-      '<video id="slowmo-<%= shortCode %>" autoplay="true" loop="true" poster="<%=poster%>">',
+      '<video id="slowmo-<%= shortCode %>" autoplay loop poster="<%=poster%>">',
         '<source src="<%=mp4%>" type="video/mp4"></source>',
         '<source src="<%=webm%>" type="video/webm"></source>',
       '</video>',
