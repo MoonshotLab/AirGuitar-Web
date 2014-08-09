@@ -4,8 +4,8 @@ minW = 16.6
 
 #video-configs
   position absolute
-  width 805px
-  height 800px
+  width 1000px
+  height 700px
   z-index 1
 
   .config
@@ -15,14 +15,14 @@ minW = 16.6
     height 100%
 
   .mask
-    top 0
-    left 0
+    top 0px
+    left 0px
     position absolute
     width 100%
     height 100%
     overflow hidden
-    -webkit-mask-position 10px 35px
-    -webkit-mask-size 102%
+    -webkit-mask-position -35px -86px
+    -webkit-mask-size 115.5%
 
   video
     -webkit-filter brightness(2)
@@ -41,58 +41,57 @@ minW = 16.6
     .mask:nth-child(1)
       -webkit-mask-image url('/masks/two-up-0.svg')
       video
-        top 20px
+        top -30px
         left 10px
         width 250px
-        display block
 
     .mask:nth-child(2)
       -webkit-mask-image url('/masks/two-up-1.svg')
       video
-        top 30px
-        left 128px
+        top -30px
+        left 154px
         width 230px
 
     .mask:nth-child(3)
       -webkit-mask-image url('/masks/two-up-2.svg')
       video
-        top 30px
-        left 235px
+        top -30px
+        left 320px
         width 230px
 
     .mask:nth-child(4)
       -webkit-mask-image url('/masks/two-up-3.svg')
       video
-        top 0
+        top 120px
         width 750px
-        left -50px
+        left -80px
 
     .mask:nth-child(5)
       -webkit-mask-image url('/masks/two-up-4.svg')
       video
         top 0
-        left 190px
+        left 290px
         width 700px
 
     .mask:nth-child(6)
       -webkit-mask-image url('/masks/two-up-5.svg')
       video
-        left 390px
-        top 420px
+        left 450px
+        top 480px
         width 220px
 
     .mask:nth-child(7)
       -webkit-mask-image url('/masks/two-up-6.svg')
       video
-        left 480px
-        top 400px
+        left 580px
+        top 480px
         width 250px
 
     .mask:nth-child(8)
       -webkit-mask-image url('/masks/two-up-7.svg')
       video
-        left 665px
-        top 400px
+        left 775px
+        top 480px
         width 220px
 
   // .config.three-up-tilt

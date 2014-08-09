@@ -6,19 +6,17 @@ body {
   padding: 0;
   background-color: #000;
   overflow: hidden;
-  -webkit-perspective: 100px;
-  -webkit-perspective-origin: top right;
 }
 #wall {
   position: absolute;
-  left: 50px;
-  top: -40px;
+  left: 0px;
+  top: 0px;
   -webkit-transform: scale(0.83);
 }
 #video-configs {
   position: absolute;
-  width: 805px;
-  height: 800px;
+  width: 1000px;
+  height: 700px;
   z-index: 1;
 }
 #video-configs .config {
@@ -28,14 +26,14 @@ body {
   height: 100%;
 }
 #video-configs .mask {
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
-  -webkit-mask-position: 10px 35px;
-  -webkit-mask-size: 102%;
+  -webkit-mask-position: -35px -86px;
+  -webkit-mask-size: 115.5%;
 }
 #video-configs video {
   -webkit-filter: brightness(2);
@@ -53,65 +51,64 @@ body {
   -webkit-mask-image: url("/masks/two-up-0.svg");
 }
 #video-configs .config.two-up .mask:nth-child(1) video {
-  top: 20px;
+  top: -30px;
   left: 10px;
   width: 250px;
-  display: block;
 }
 #video-configs .config.two-up .mask:nth-child(2) {
   -webkit-mask-image: url("/masks/two-up-1.svg");
 }
 #video-configs .config.two-up .mask:nth-child(2) video {
-  top: 30px;
-  left: 128px;
+  top: -30px;
+  left: 154px;
   width: 230px;
 }
 #video-configs .config.two-up .mask:nth-child(3) {
   -webkit-mask-image: url("/masks/two-up-2.svg");
 }
 #video-configs .config.two-up .mask:nth-child(3) video {
-  top: 30px;
-  left: 235px;
+  top: -30px;
+  left: 320px;
   width: 230px;
 }
 #video-configs .config.two-up .mask:nth-child(4) {
   -webkit-mask-image: url("/masks/two-up-3.svg");
 }
 #video-configs .config.two-up .mask:nth-child(4) video {
-  top: 0;
+  top: 120px;
   width: 750px;
-  left: -50px;
+  left: -80px;
 }
 #video-configs .config.two-up .mask:nth-child(5) {
   -webkit-mask-image: url("/masks/two-up-4.svg");
 }
 #video-configs .config.two-up .mask:nth-child(5) video {
   top: 0;
-  left: 190px;
+  left: 290px;
   width: 700px;
 }
 #video-configs .config.two-up .mask:nth-child(6) {
   -webkit-mask-image: url("/masks/two-up-5.svg");
 }
 #video-configs .config.two-up .mask:nth-child(6) video {
-  left: 390px;
-  top: 420px;
+  left: 450px;
+  top: 480px;
   width: 220px;
 }
 #video-configs .config.two-up .mask:nth-child(7) {
   -webkit-mask-image: url("/masks/two-up-6.svg");
 }
 #video-configs .config.two-up .mask:nth-child(7) video {
-  left: 480px;
-  top: 400px;
+  left: 580px;
+  top: 480px;
   width: 250px;
 }
 #video-configs .config.two-up .mask:nth-child(8) {
   -webkit-mask-image: url("/masks/two-up-7.svg");
 }
 #video-configs .config.two-up .mask:nth-child(8) video {
-  left: 665px;
-  top: 400px;
+  left: 775px;
+  top: 480px;
   width: 220px;
 }
 #blocks {
@@ -124,7 +121,7 @@ body {
   position: absolute;
   display: block;
   width: 200px;
-  height: 280px;
+  height: 200px;
   overflow: hidden;
 }
 #block-0,
@@ -141,7 +138,7 @@ body {
 #block-9,
 #block-10,
 #block-11 {
-  top: 138px;
+  top: 160px;
 }
 #block-12,
 #block-13,
@@ -149,7 +146,7 @@ body {
 #block-15,
 #block-16,
 #block-17 {
-  top: 276px;
+  top: 320px;
 }
 #block-18,
 #block-19,
@@ -157,7 +154,7 @@ body {
 #block-21,
 #block-22,
 #block-23 {
-  top: 414px;
+  top: 480px;
 }
 #block-0,
 #block-6,
@@ -169,31 +166,31 @@ body {
 #block-7,
 #block-13,
 #block-19 {
-  left: 138px;
+  left: 160px;
 }
 #block-2,
 #block-8,
 #block-14,
 #block-20 {
-  left: 276px;
+  left: 320px;
 }
 #block-3,
 #block-9,
 #block-15,
 #block-21 {
-  left: 414px;
+  left: 480px;
 }
 #block-4,
 #block-10,
 #block-16,
 #block-22 {
-  left: 552px;
+  left: 640px;
 }
 #block-5,
 #block-11,
 #block-17,
 #block-23 {
-  left: 690px;
+  left: 800px;
 }
 .block.g .colored-unit-0 {
   background-color: #15fe16;
